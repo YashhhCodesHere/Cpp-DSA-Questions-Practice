@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     int age;
@@ -12,7 +13,7 @@ int main()
     else if(age>=18){
         cout << "You're eligible for work!\n";
         if(age>=55 && age <57){
-            cout << "You're eligible for work, but Yours retirement is soon!\n";
+            cout << "But Your retirement is soon!\n";
         }
     }
         if(age > 57){

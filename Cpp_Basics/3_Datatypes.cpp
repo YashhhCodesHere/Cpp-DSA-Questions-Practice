@@ -15,8 +15,6 @@ int main()
 
     // String takes too much place that's why we use char to store single character!
 
-    
-
     // Taking string as input:-
     string inp;
     cout << "Enter your string here: ";

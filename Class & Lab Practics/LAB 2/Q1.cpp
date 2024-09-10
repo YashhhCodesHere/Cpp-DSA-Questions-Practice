@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
     int rows, columns;
@@ -34,5 +35,6 @@ int main()
         }
         cout << "Column " << j + 1 << ": " << columnSum << endl;
     }
+
     return 0;
 }

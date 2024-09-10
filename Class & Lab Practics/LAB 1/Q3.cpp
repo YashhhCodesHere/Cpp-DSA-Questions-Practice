@@ -10,8 +10,9 @@ int main() {
         cin >> arr[i];
     }
 
-    int maxElement = arr[0];
-    int minElement = arr[0];
+    int maxElement = INT_MIN;
+    int minElement = INT_MAX;
+    
 
     for (int i = 1; i < SIZE; i++) {
         if (arr[i] > maxElement) {
@@ -22,8 +23,8 @@ int main() {
         }
     }
 
-    cout << "Maximum element: " << maxElement << endl;
-    cout << "Minimum element: " << minElement << endl;
+    cout << "Maximum element: " << maxElement << endl; // This line shows the maximum element of the array
+    cout << "Minimum element: " << minElement << endl; // This line shows the minimum element of the array
 
     return 0;
 }

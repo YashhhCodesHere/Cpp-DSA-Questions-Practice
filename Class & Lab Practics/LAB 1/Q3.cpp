@@ -15,13 +15,9 @@ int main() {
     int minElement = INT_MAX;
     
 
-    for (int i = 1; i < SIZE; i++) {
-        if (arr[i] > maxElement) {
-            maxElement = arr[i];
-        }
-        if (arr[i] < minElement) {
-            minElement = arr[i];
-        }
+    for (int i = 0; i < SIZE; i++) {
+        maxElement = max(maxElement,arr[i]);
+        minElement = min(minElement,arr[i]);
     }
 
     cout << "Maximum element: " << maxElement << endl; // This line shows the maximum element of the array

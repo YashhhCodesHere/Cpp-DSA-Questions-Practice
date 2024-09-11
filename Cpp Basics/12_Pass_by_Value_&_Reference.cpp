@@ -11,6 +11,7 @@ int pass_by_reference(int &a){
 int main()
 {
     int a = 5;
+    
     cout << pass_by_value(a) << endl;
     cout << a << "\n";  // Original value of 'a' will remains same!
     cout << pass_by_reference(a) << endl;

@@ -25,5 +25,32 @@ int main()
         k++;
     }while(k<=1);
     cout << "The value of k is: " << k << endl;
+
+    // Sum of all odd numbers from 1 to 'N':-
+    
+    int n, sum=0;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+    for(int i=1;i<=n;i+=2){
+        sum+=i;
+    }
+    cout<<"The sum of n-odd numbers is: "<<sum;
+
+    // Check prime number:-
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+    bool isPrime = true;
+    for(int i=2;i<n;i++){
+        if(n%i==0){
+            isPrime = false;
+            break;
+        }
+    }
+    if(!isPrime){
+        cout<<"Not Prime\n";
+    }else{
+        cout<<"Prime\n";
+    }
     return 0;
 }

@@ -2,6 +2,7 @@
 using namespace std;
 int main()
 {
+    //Voting Eligibility:-
     int age;
     cout << "Enter your age: ";
     cin >> age;
@@ -18,5 +19,13 @@ int main()
     else{
         cout << "You're a Child\n";
     }
+
+    // Character case check:-
+
+    char ch;
+    cout << "Enter a character: ";
+    cin>>ch;
+    
+    (ch>='A' && ch<='Z')?(cout<<"Upper Case!\n"):(cout<<"Lower Case!\n");   // Using Ternary Operator
     return 0;
 }

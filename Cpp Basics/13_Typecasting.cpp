@@ -9,7 +9,9 @@ int main()
     float num = 101.999;
     cout<<num<<endl;
     num = int(num);
-    cout<<num;
+    cout<<num<<endl;
 
+    float random; // This will gonna store some garbage value
+    cout<<random<<endl;
     return 0;
 }

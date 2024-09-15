@@ -52,5 +52,17 @@ int main()
     }else{
         cout<<"Prime\n";
     }
+
+    // Sum of digits of a number:-
+
+    int x, sum=0;
+    cout<<"Enter the value of x: ";
+    cin>> x;
+    
+    while(x>0){
+        sum += x%10;
+        x /= 10;
+    }
+    cout << sum;
     return 0;
 }

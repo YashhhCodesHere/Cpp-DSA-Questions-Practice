@@ -39,5 +39,7 @@ int main()
     cout<<"Enter the value of n: ";
     cin>> n;
     cout<< "Sum till 'N' is: "<<sumToN(n);
+
+
     return 0;
 }

@@ -1,22 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 //  Void Function Parameterised:-
-void print_name(string name){
+void print_name(string name){   // Function Definition
     cout << "Good Morning!\n";
     cout << "      " << name << endl; 
 }
 //  Return Function:-
-int sum(int num1,int num2){
+int sum(int num1,int num2){     // num1 & num2 are parameters herej
     return (num1+num2);
+}
+
+int minimum(int a, int b){
+    return min(a,b);
 }
 int main()
 {
     string name;
     cout << "Enter your name: ";
     cin >> name;
-    print_name(name);
+    print_name(name);   // Function Call
 
     int num1 = 20, num2 = 30;
-    cout<< "\nThe sum is: " << sum(num1,num2) << endl;
+    int add = sum(num1,num2);   // num1 & num2 are arguements here
+    cout<< "\nThe sum is: " << add << endl;
+
+    cout<<"Minimum of the two number is: " << minimum(12,91)<<endl;
     return 0;
 }

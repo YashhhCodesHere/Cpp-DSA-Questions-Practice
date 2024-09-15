@@ -18,5 +18,13 @@ int main()
     }
     cout<<"Maximum element of array is: "<< max_num<< " at the index: "<< max_index<<endl;
     cout<<"Minimum element of array is: "<< min_num<< " at the index: "<< min_index<<endl;
+
+    // Swapping the maximum and minimum elements of the array:-
+    swap(arr[max_index],arr[min_index]);
+    cout<<"Array after swapping the maximum and minimum elements: ";
+    for(int i  = 0; i< (sizeof(arr)/sizeof(int)); i++){
+        cout<<arr[i]<<" ";
+    }
+
     return 0;
 }

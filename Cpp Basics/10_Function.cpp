@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Literals are fundamental elements used to represent constant values used in any Languages!
+
 //  Void Function Parameterised:-
 void print_name(string name){   // Function Definition
     cout << "Good Morning!\n";

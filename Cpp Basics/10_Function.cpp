@@ -15,6 +15,13 @@ int sum(int num1,int num2){     // num1 & num2 are parameters herej
 int minimum(int a, int b){
     return min(a,b);
 }
+
+int sumToN(int n){
+    if(n == 1){
+        return 1;
+    }
+    return n + sumToN(n-1);
+}
 int main()
 {
     string name;
@@ -27,5 +34,10 @@ int main()
     cout<< "\nThe sum is: " << add << endl;
 
     cout<<"Minimum of the two number is: " << minimum(12,91)<<endl;
+
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>> n;
+    cout<< "Sum till 'N' is: "<<sumToN(n);
     return 0;
 }

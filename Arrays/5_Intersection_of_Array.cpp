@@ -32,5 +32,6 @@ int main()
     for(int i = 0; i < count; i++){
         cout<<arr3[i]<<" ";
     }
+
     return 0;
 }

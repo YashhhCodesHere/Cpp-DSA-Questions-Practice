@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int fact(int num){
     if(num == 1){
         return 1;
@@ -25,6 +26,6 @@ int main()
         int nCr = nfact/(rfact * (nMrfact));
         cout << "The value of ncr is: "<< nCr;
     }
-
+    
     return 0;
 }

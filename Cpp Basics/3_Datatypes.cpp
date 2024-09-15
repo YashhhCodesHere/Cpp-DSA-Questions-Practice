@@ -22,6 +22,11 @@ int main()
     getline(cin, inp); // This method will read a line of text from the user and store it in the variable 'inp'
     cout << inp;
 
+    // Size of datatype modifiers:-
+
+    cout<<sizeof(int)<<" Bytes\n";
+    cout<<sizeof(long int)<<" Bytes\n";
+    cout<<sizeof(short int)<<" Bytes\n";
 
     return 0;
 }

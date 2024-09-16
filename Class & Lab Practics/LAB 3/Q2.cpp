@@ -26,8 +26,16 @@ int binarySearch(int arr[], int size, int target) {
 }
 
 int main() {
-    int arr[] = {2, 3, 4, 10, 40};
-    int size = sizeof(arr) / sizeof(arr[0]);
+    int size;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+    int arr[size];
+    cout << endl;
+    cout << "Enter the elements of the array: ";
+    for(int i = 0; i < size; i++){
+        cin >> arr[i];
+    }
+    cout<<endl;
     int target;
     cout << "Enter the element to search for: ";
     cin >> target;

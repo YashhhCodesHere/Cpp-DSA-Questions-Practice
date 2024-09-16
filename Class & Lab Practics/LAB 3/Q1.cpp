@@ -14,7 +14,8 @@ int main() {
     int size;
     cout << "Enter the size of the array: ";
     cin >> size;
-
+    cout<<endl;
+    
     int arr[size];
     cout << "Enter the elements of the array: ";
     for (int i = 0; i < size; i++) {
@@ -27,9 +28,9 @@ int main() {
 
     int result = linearSearch(arr, size, key);
     if (result != -1) {
-        cout << "Element found at index " << result << endl;
+        cout << "\nElement found at index " << result << endl;
     } else {
-        cout << "Element not found in the array" << endl;
+        cout << "\nElement not found in the array" << endl;
     }
 
     return 0;

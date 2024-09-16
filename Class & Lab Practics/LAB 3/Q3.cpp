@@ -15,18 +15,21 @@ int main() {
 
     cout << "Enter the size of the array: ";
     cin >> size;
+    cout<<endl;
 
     int arr[size];
     cout << "Enter the elements of the array: ";
     for (int i = 0; i < size; i++) {
         cin >> arr[i];
     }
+    cout<<endl;
 
     cout << "Enter the element to find: ";
     cin >> element;
 
     int index = findFirstOccurrence(arr, size, element);
-
+    cout<<endl;
+    
     if (index != -1) {
         cout << "The first occurrence of element " << element << " is at index " << index << "." << endl;
     } else {

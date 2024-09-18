@@ -31,8 +31,12 @@ int main()
     cout<<"Printing the first element of the vector: "<<vec.front()<<endl;    // Prints the first element of the vector
     cout<<"Printing the last element of the vector: "<<vec.back()<<endl;    // Prints the last element of the vector
     cout<<"For printing the value at index 1: "<<vec.at(1)<<endl;    // Prints the value at index 1
-    cout<<"For checking if the vector is empty or not: "<<vec.empty()<<endl;    // Returns 1 if empty else 0
     vec.clear();    // Clears the vector"
+    vec.erase(vec.begin()+1);    // Erases the second element of the vector
+    vec.insert(vec.begin()+1, 10);    // Inserts 10 at the second position of the vector
+    vec.size();    // Returns the size of the vector
+    vec.swap(arr);    // Swaps the elements of the two vectors
+    vec.empty();    // Returns 1 if empty else 0
 
     // Calling the vector elements using iterator:-
 

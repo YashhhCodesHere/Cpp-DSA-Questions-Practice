@@ -10,6 +10,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <numeric>
+#include <utility> // Include for std::pair
 using namespace std;
 
 void vectorExample() {
@@ -132,6 +133,16 @@ void algorithmExample() {
     auto ub = upper_bound(vec.begin(), vec.end(), 3);
 }
 
+void pairExample() {
+    pair<int, string> p;
+    p.first = 1;
+    p.second = "example";
+    cout << "Pair: (" << p.first << ", " << p.second << ")" << endl;
+
+    pair<int, string> p2 = make_pair(2, "another example");
+    cout << "Pair: (" << p2.first << ", " << p2.second << ")" << endl;
+}
+
 int main() {
     vectorExample();
     listExample();
@@ -146,6 +157,7 @@ int main() {
     unorderedSetExample();
     unorderedMapExample();
     algorithmExample();
+    pairExample();
 
     return 0;
 }

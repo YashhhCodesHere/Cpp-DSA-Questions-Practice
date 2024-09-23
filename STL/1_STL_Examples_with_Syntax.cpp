@@ -20,6 +20,14 @@ void vectorExample() {
     int size = vec.size();
     int first = vec.front();
     int last = vec.back();
+    
+    for (int i = 3; i <= 5; ++i) {   // This is a range-based for loop for inserting elements into the vector
+        vec.push_back(i);
+    }
+    for (const auto& elem : vec) {  // This is for each loop for printing elements of the vector
+        cout << elem << " ";
+    }
+    cout << endl;
 }
 
 void listExample() {

@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+// One should always declare variable in the form of camelCase to make the program more readable and understandable!
+
 int main()
 {
     // There are various datatypes:-

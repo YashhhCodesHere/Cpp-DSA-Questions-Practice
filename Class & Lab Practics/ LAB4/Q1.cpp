@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 struct Node {
     int data;
     Node* next;
@@ -43,10 +45,10 @@ public:
     void traverse() {
         Node* temp = head;
         while (temp != nullptr) {
-            std::cout << temp->data << " -> ";
+            cout << temp->data << " -> ";
             temp = temp->next;
         }
-        std::cout << "nullptr" << std::endl;
+        cout << "nullptr" << endl;
     }
 
     ~SinglyLinkedList() {
@@ -67,11 +69,11 @@ int main() {
     list.insert(20);
     list.insert(30);
 
-    std::cout << "List after insertion: ";
+    cout << "List after insertion: ";
     list.traverse();
 
     list.deleteValue(20);
-    std::cout << "List after deletion of 20: ";
+    cout << "List after deletion of 20: ";
     list.traverse();
 
     return 0;

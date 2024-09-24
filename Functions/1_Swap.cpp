@@ -14,6 +14,14 @@ void swapByPointer(int* a, int* b){
     *a = *b;
     *b = temp;
 }
+
+// Call by reference using reference variable:-
+void swapByVar(int &a, int &b){
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
 int main()
 {
     int a=2,b=5;
@@ -23,5 +31,7 @@ int main()
     cout<<"The value of a is: "<<a<<" & b is: "<<b<<endl;
     swapByPointer(&a,&b);
     cout<<"The value of a is: "<<a<<" & b is: "<<b<<" after using a pointer!"<<endl;
+    swapByVar(a,b);
+    cout<<"The value of a is: "<<a<<" & b is: "<<b<<" after using a address variable!"<<endl;
     return 0;
 }

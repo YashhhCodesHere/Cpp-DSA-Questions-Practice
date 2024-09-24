@@ -51,6 +51,19 @@ public:
         cout << "nullptr" << endl;
     }
 
+    void reverse() {
+        Node* prev = nullptr;
+        Node* current = head;
+        Node* next = nullptr;
+        while (current != nullptr) {
+            next = current->next;
+            current->next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
+
     ~SinglyLinkedList() {
         Node* current = head;
         Node* next = nullptr;
@@ -74,6 +87,10 @@ int main() {
 
     list.deleteValue(20);
     cout << "List after deletion of 20: ";
+    list.traverse();
+
+    list.reverse();
+    cout << "List after reversal: ";
     list.traverse();
 
     return 0;

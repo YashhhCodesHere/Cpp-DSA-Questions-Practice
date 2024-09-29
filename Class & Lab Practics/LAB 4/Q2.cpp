@@ -2,9 +2,11 @@
 
 using namespace std;
 
-struct Node {
+class Node {
+public:
     int data;
     Node* next;
+    Node(int data) : data(data), next(nullptr) {}
 };
 
 class LinkedList {
@@ -12,8 +14,7 @@ public:
     LinkedList() : head(nullptr) {}
 
     void push(int data) {
-        Node* newNode = new Node();
-        newNode->data = data;
+        Node* newNode = new Node(data);
         newNode->next = head;
         head = newNode;
     }
@@ -21,9 +22,8 @@ public:
     void reverse() {
         Node* prev = nullptr;
         Node* current = head;
-        Node* next = nullptr;
         while (current != nullptr) {
-            next = current->next;
+            Node* next = current->next;
             current->next = prev;
             prev = current;
             current = next;
@@ -34,10 +34,10 @@ public:
     void print() const {
         Node* temp = head;
         while (temp != nullptr) {
-            cout << temp->data << " ";
+            cout << temp->data << " -> ";
             temp = temp->next;
         }
-        cout << endl;
+        cout <<"NULL"<< endl;
     }
 
 private:

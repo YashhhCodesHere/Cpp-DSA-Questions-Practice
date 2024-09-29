@@ -2,9 +2,11 @@
 
 using namespace std;
 
-struct Node {
+class Node {
+public:
     int data;
     Node* next;
+    Node(int value) : data(value), next(nullptr) {}
 };
 
 class SinglyLinkedList {
@@ -15,8 +17,7 @@ public:
     SinglyLinkedList() : head(nullptr) {}
 
     void insert(int value) {
-        Node* newNode = new Node();
-        newNode->data = value;
+        Node* newNode = new Node(value);
         newNode->next = head;
         head = newNode;
     }
@@ -66,9 +67,8 @@ public:
 
     ~SinglyLinkedList() {
         Node* current = head;
-        Node* next = nullptr;
         while (current != nullptr) {
-            next = current->next;
+            Node* next = current->next;
             delete current;
             current = next;
         }

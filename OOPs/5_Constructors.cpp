@@ -8,7 +8,7 @@ class Complex
 {
     int a, b;
 public:
-    Complex() // default Constructor
+    Complex() // default Constructor -> Doesn't takes any value as arguement
     {
         a = 10;
         b = 20;

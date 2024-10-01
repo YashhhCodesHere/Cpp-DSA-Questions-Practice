@@ -4,10 +4,10 @@ using namespace std;
 class Sum{
     int a, b;
 public:
-    Sum(int, int);  // Constructor is only initialised here!
+    Sum(int = 6, int y=8);  // Constructor is only initialised here!
 
     void getNum(){
-        cout<<"The value of 'a' & 'b' is: "<< a << b <<endl;
+        cout<<"The value of 'a' & 'b' is: "<< a <<" "<< b <<endl;
     }
 
     void getSum(){
@@ -21,6 +21,13 @@ Sum :: Sum(int x, int y){   //  No return type because of Constructor
 }
 int main()
 {
+    Sum s1(5,3);   // Used parameter passed
+    s1.getNum();
+    s1.getSum();
+    
+    Sum s2;   // Used default value inside the constructor
+    s2.getNum();
+    s2.getSum();
     
     return 0;
 }

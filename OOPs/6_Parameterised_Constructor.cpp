@@ -4,7 +4,7 @@ using namespace std;
 class Sum{
     int a, b;
 public:
-    Sum(int = 6, int y=8);  // Constructor is only initialised here!
+    Sum(int x= 6, int y=8);  // Constructor is only initialised here!
 
     void getNum(){
         cout<<"The value of 'a' & 'b' is: "<< a <<" "<< b <<endl;

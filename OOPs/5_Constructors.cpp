@@ -13,6 +13,15 @@ public:
         a = 10;
         b = 20;
     }
+    Complex(int x, int y){
+        a = x;
+        b = y;
+    }
+    Complex(Complex &c){    // Copy Constructor -> It is used to copy the values of one object to another object.
+        a = c.a;
+        b = c.b;
+    }
+    // When we don't create a copy constructor, C++ creates a default copy constructor for us.
     void printNumber()
     {
         cout << "Your number is (" << a << " + " << b << "i)" << endl;
@@ -20,7 +29,10 @@ public:
 
 };
 int main(){
-    Complex c1, c2;
+    Complex c1, c2(4,5);
     c1.printNumber();
+    c2.printNumber();
+    Complex c3(c1); // Copy Constructor
+    c3.printNumber();
     return 0;
 }

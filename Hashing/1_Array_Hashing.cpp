@@ -16,6 +16,7 @@ int main()
     }
 
     // Precompute Hash Table:-
+
     // int hashh[100] = {0};    -> This will give stack overflow error or segmentation fault for large size of array.
     for(int i = 0; i < n; i++){
         hashh[arr[i]] += 1;
@@ -28,6 +29,7 @@ int main()
         int number;
         cout<<"Enter the number you want to know, how much time it occurs in array: ";
         cin>>number;
+        // Fetching result from hash table:-
         cout<<number<< " occurs "<<hashh[number]<<" times in the array!"<<endl;
     }
     return 0;

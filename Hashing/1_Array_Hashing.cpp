@@ -12,7 +12,7 @@ int main()
         cin>>arr[i];
     }
     // Precompute Hash Table:-
-    int hash[20] = {0};
+    int hash[100] = {0};
     for(int i = 0; i < n; i++){
         hash[arr[i]] += 1;
     }

@@ -69,7 +69,7 @@ public:
     }
 
     void display(){
-        if(head == nullptr){
+        if(!head){
             return;
         }else{
             Node* current = head;

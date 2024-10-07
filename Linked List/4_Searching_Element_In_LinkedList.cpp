@@ -15,6 +15,12 @@ public :
 
     LinkedList() : head(nullptr) {}
     
+    void insertAtHead(int val){
+        Node* newNode = new Node(val);
+        newNode -> next = head;
+        head = newNode;
+    }
+
     void insertAtTail(int val){
         Node* newNode = new Node(val);
         Node* temp = head;
@@ -29,12 +35,6 @@ public :
         }
         temp->next = newNode;
     } 
-
-    void insertAtHead(int val){
-        Node* newNode = new Node(val);
-        newNode -> next = head;
-        head = newNode;
-    }
 
     void display(){
         Node* temp = head;

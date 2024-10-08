@@ -36,6 +36,16 @@ public :
         temp->next = newNode;
     } 
 
+    void deleteNode(int val){
+        Node* temp = head;
+        while((temp -> next -> data) != val){
+            temp = temp -> next;
+        }
+        Node* toDelete = temp -> next;
+        temp -> next = temp -> next -> next;
+        delete toDelete;
+    }
+
     void display(){
         Node* temp = head;
         while(temp != nullptr){
@@ -49,12 +59,12 @@ public :
         Node* temp = head;
         while(temp != nullptr){
             if(temp -> data == key){
-                cout<< key <<" is present in the Linked List";
+                cout<< key <<" is present in the Linked List\n";
                 return;
             }
             temp = temp -> next;
         }
-        cout << key<<" is NOT present in the Linked List";
+        cout << key<<" is NOT present in the Linked List\n";
     }
 };
 
@@ -71,6 +81,8 @@ int main(){
     
     ll.search(11);
 
+    ll.deleteNode(4);
+    ll.display();
 
 /*  For dynamically allocating Linkedlist:-
     // LinkedList* l1 = new LinkedList();

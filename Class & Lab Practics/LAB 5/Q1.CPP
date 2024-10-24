@@ -14,7 +14,7 @@ class CircularLinkedList {
 private:
     Node* head;
 
-public:
+public:  
     CircularLinkedList() : head(nullptr) {}
 
     void insert(int value) {

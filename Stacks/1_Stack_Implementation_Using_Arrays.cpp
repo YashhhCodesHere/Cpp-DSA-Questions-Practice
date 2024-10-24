@@ -68,6 +68,14 @@ public:
             cout << "Top element is: " << arr[top] << endl;
         }
     }
+        void isFull()
+    {
+        if (top >= maxSize - 1){
+            cout << "Stack is full" << endl;
+        }else{
+            cout << "Stack is not full" << endl;
+        }
+    }
 };
 
 int main()
@@ -81,6 +89,6 @@ int main()
     stack.pop();
     stack.display();
     stack.peek();
-
+    stack.isFull();
     return 0;
 }

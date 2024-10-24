@@ -63,6 +63,32 @@ public:
         }
     }
 
+    void deleteNode(int pos) {
+        if (head == nullptr || pos < 0) return;
+
+        Node* temp = head;
+
+        if (pos == 0) {
+            head = temp->next;
+            if (head) head->prev = nullptr;
+            delete temp;
+            return;
+        }
+
+        for (int i = 0; temp != nullptr && i < pos; ++i) {
+            temp = temp->next;
+        }
+
+        if (temp == nullptr) return;
+
+        if (temp->next) temp->next->prev = temp->prev;
+        if (temp->prev) temp->prev->next = temp->next;
+
+        if (temp == tail) tail = temp->prev;
+
+        delete temp;
+    }
+
     void display() {
         Node* temp = head;
         while (temp) {
@@ -91,6 +117,10 @@ int main() {
     cout << "Inserting 25 at middle: ";
     dll.insertAtMiddle(25, 1); // Insert 25 at position 1
     dll.display(); // Output: 20 25 10 30
+
+    cout << "Deleting node at position 1: ";
+    dll.deleteNode(1);
+    dll.display(); // Output: 20 10 30
 
     return 0;
 }

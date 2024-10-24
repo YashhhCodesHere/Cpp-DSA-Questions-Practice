@@ -38,15 +38,13 @@ public:
     void deleteNode(int val)
     {
         // If linked list is empty:-
-        if (head == NULL)
-        {
+        if (head == NULL){
             cout << "Linked List is empty!" << endl;
             return;
         }
 
         // If there is only one node in the linked list:-
-        if (head->next == nullptr)
-        {
+        if (head->next == nullptr){
             if (head->data == val){
                 delete head;
                 head = nullptr;
@@ -57,9 +55,8 @@ public:
         }
 
         // If we want to delete the first node:-
-        if (head->data == val)
-        {
-            Node *toDelete = head;
+        if (head->data == val){
+            Node* toDelete = head;
             head = head->next;
             delete toDelete;
             return;
@@ -67,19 +64,16 @@ public:
 
         // For deleting rest of the node:-
         Node *temp = head;
-        while (temp->next != nullptr && temp->next->data != val)
-        {
+        while (temp->next != nullptr && temp->next->data != val){
             temp = temp->next;
         }
-
         // If the node to be deleted is not found
-        if (temp->next == nullptr)
-        {
+        if (temp->next == nullptr){
             cout << "Node with value " << val << " not found." << endl;
             return;
         }
 
-        Node *toDelete = temp->next;
+        Node* toDelete = temp->next;
         temp->next = temp->next->next;
         delete toDelete;
     }
@@ -87,7 +81,7 @@ public:
     void display()
     {
         Node *temp = head;
-        cout<<"\nLinkedList: ";
+        cout << "\nLinkedList: ";
         while (temp != nullptr)
         {
             cout << temp->data << "->";
@@ -95,7 +89,6 @@ public:
         }
         cout << "NULL" << endl;
     }
-
 };
 
 int main()
@@ -109,5 +102,4 @@ int main()
     ll.insertAtTail(5);
     ll.deleteNode(1);
     ll.display();
-
 }

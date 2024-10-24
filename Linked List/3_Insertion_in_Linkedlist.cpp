@@ -25,13 +25,19 @@ public:
         // Step 1: Create a new Node
         Node* newNode = new Node(val);
 
-        // Step 2: Set next of newNode to the current head
+        // Step 2: Check if the list is empty
+        if (head == nullptr) {
+            head = newNode;
+            return;
+        }
+
+        // Step 3: Set next of newNode to the current head
         newNode -> next = head;
 
-        // Step 3: Set newNode as the head
+        // Step 4: Set newNode as the head
         head = newNode;
     }
-
+ 
     void insertAtTail(int val){
         Node* newNode = new Node(val);
         Node* current = head;

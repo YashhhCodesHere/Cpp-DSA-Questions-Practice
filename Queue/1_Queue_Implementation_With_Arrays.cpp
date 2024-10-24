@@ -1,95 +1,89 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-#define max_size 10
-class Queue{
-public: 
-    int* arr;
-    int front;
-    int back;
 
-    Queue(){
-        arr = new int[max_size];
-        front = -1;
-        back = -1;
-    }
-    
-    void push(int val){
-        if(back == (max_size - 1)){
-            cout << "Queue Overflow!\n";
-            return;
-        }
-        arr[++back] = val;
-        if(front == -1){
-            front++;
-        }
+class Queue {
+private:
+    int front, rear, size;
+    int* queue;
+    int capacity;
+
+public:
+    Queue(int c) {
+        front = rear = 0;
+        size = 0; // Initialize size to 0
+        capacity = c;
+        queue = new int[capacity];
     }
 
-    void pop(){
-        if(front == -1 || front > back){
-            cout << "No elements in the Queue!\n";
-            return;
-        }
-        front++;
+    ~Queue() {
+        delete[] queue;
     }
 
-    void peek(){
-        if(front == -1 || front > back){
-            cout << "No elements in the Queue!\n";
+    void enqueue(int data) {
+        if (isFull()) {
+            cout << "Queue is full\n";
             return;
         }
-        cout << "Peeking Queue: " << arr[front] << endl;
+        queue[rear] = data;
+        rear = (rear + 1) % capacity;
+        size++;
     }
 
-    void empty(){
-        if(front == -1 || front > back){
-            cout << "Queue is Empty!\n";
-            return;
-        }else{
-            cout << "Queue is NOT Empty!\n";
+    void dequeue() {
+        if (isEmpty()) {
+            cout << "Queue is empty\n";
             return;
         }
+        front = (front + 1) % capacity;
+        size--;
     }
-    
-    void display(){
-        if(front == -1 || front > back){
-            cout << "No elements in the Queue!\n";
+
+    int peek() {
+        if (isEmpty()) {
+            cout << "Queue is empty\n";
+            return -1;
+        }
+        return queue[front];
+    }
+
+    bool isFull() {
+        return size == capacity;
+    }
+
+    bool isEmpty() {
+        return size == 0;
+    }
+
+    void display() {
+        if (isEmpty()) {
+            cout << "Queue is empty\n";
             return;
         }
-        cout << "Elements in the Queue are: ";
-        for(int i = front; i<=back; i++){
-            cout << arr[i] << " ";
+        for (int i = 0; i < size; i++) {
+            cout << queue[(front + i) % capacity] << " ";
         }
         cout << endl;
     }
 };
 
-int main()
-{
-    Queue q;
-    for(int i = 1; i<=5; i++){
-        q.push(i);
-    }
+int main() {
+    Queue q(5);
 
-    // Displaying all the elements of queue:-
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.enqueue(40);
+    q.enqueue(50);
+
     q.display();
 
-    // Checking first element of queue:-
-    q.peek();
+    q.dequeue();
+    q.display();
 
-    // Removing first element of queue:-
-    q.pop();
+    cout << "Front element is: " << q.peek() << endl;
 
-    // Checking first element of queue:-
-    q.peek();
-
-    // Removing all the element from queue:-
-    q.pop();
-    q.pop();
-    q.pop();
-    q.pop();
-    
-    // Now Checking if queue is empty or not:-
-    q.empty();
+    q.enqueue(60);
+    q.display();
 
     return 0;
 }

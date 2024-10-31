@@ -1,4 +1,4 @@
-# Striver DSA Sheet in C++
+# DSA Sheet in C++
 
 ## Introduction
 This repository contains my solutions to the popular [Striver DSA Sheet](https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/) implemented in C++. The Striver DSA Sheet is a comprehensive collection of data structures and algorithms (DSA) problems that are essential for cracking coding interviews. By solving these problems, I aim to strengthen my problem-solving skills and prepare for technical interviews.

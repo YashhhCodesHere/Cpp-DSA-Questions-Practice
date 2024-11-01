@@ -13,6 +13,7 @@ int main()
     const int a = 10;
     const float pi = 3.14;
     const float g = 9.8;
+
     a = 20; // Throws an Error as a is a constant & can't be changed (assignment of read-only variable 'a')
     return 0;
 }

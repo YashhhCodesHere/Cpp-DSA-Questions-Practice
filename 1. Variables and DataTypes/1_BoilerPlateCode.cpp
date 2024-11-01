@@ -3,7 +3,7 @@ using namespace std;    // Namespace Declaration - std
 /* namespace includes the standard C++ library like cout, cin, endl etc. 
 They are defined in the <iostream> & declared using the using namespace std; statement. */
 
-#define PI 3.14 // Macro Definition
+#define PI 3.14 // Macros Definition
 
 int main(){     // Main Function - Starting Point of Program
     // Start coding from here

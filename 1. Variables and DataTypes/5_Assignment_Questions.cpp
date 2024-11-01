@@ -47,5 +47,18 @@ int main()
 
     area = PI * (pow(radius, 2));
     cout << "The area of the circle is: " << area << " sq.unit\n";
+
+    // 5.
+    float principal, rate, time;
+    cout << "Enter the Principle Amount: ";
+    cin >> principal;
+    cout << "Enter the rate of interest: ";
+    cin >> rate;
+    cout << "Enter the Time period: ";
+    cin >> time;
+
+    float compoundInterest = (principal * pow((1+(rate/100)), time)) - principal;
+    cout << "The compound interest is: " << compoundInterest << "\n";
+    
     return 0;
 }

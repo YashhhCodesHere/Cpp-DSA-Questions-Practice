@@ -28,5 +28,21 @@ int main()
     cout << "b-- = " << b-- << endl;        // Post-Decrement
     cout << "--b = " << --b << endl;        // Pre-Decrement
 
+
+    cout << endl << "Relational Operators:" << endl;
+    // Relational Operators: Return boolean value i.e. true -> 1 or false -> 0
+    cout << "a == b = " << (a == b) << endl;    // Equal to
+    cout << "a != b = " << (a != b) << endl;    // Not equal to
+    cout << "a > b = " << (a > b) << endl;      // Greater than
+    cout << "a < b = " << (a < b) << endl;      // Less than
+    cout << "a >= b = " << (a >= b) << endl;    // Greater than or equal to
+    cout << "a <= b = " << (a <= b) << endl;    // Less than or equal to
+
+    cout << endl << "Logical Operators:" << endl;
+    // Logical Operators: Return boolean value i.e. true -> 1 or false -> 0 
+    cout << "(a == b) && (a > b) = " << ((a == b) && (a > b)) << endl;    // Logical AND -> Binary Operator: Both conditions should be true
+    cout << "(a == b) || (a > b) = " << ((a == b) || (a > b)) << endl;    // Logical OR -> Binary Operator: Any one condition should be true
+    cout << "!(a == b) = " << !(a == b) << endl;                          // Logical NOT -> Unary Operator: Negates the condition
+
     return 0;
 }

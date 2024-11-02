@@ -38,7 +38,7 @@ int main(){
         if(isPrime){
             cout << i << " ";
         }
-
+    }
     // 5. 
     int n;
     cout << "Enter numbers: ";

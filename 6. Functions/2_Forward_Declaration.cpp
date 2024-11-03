@@ -19,3 +19,5 @@ void sayHello()
 {
     cout << "Hello :)" << endl;
 }
+
+//   Default Parameters can't be set to first parameter and skip the next parameters.

@@ -3,6 +3,8 @@ using namespace std;
 /*
     Forward Declaration: The declaration of a function before its definition including the return type, function name, and parameters if any.
     Function Definition: The actual implementation & body of the function.
+
+    Forward Declaration is mostly used when we want to define a function after the main function.
 */
 
 void sayHello();    // Forward Declaration
@@ -15,5 +17,5 @@ int main()
 
 void sayHello()
 {
-    cout << "Hello World" << endl;
+    cout << "Hello :)" << endl;
 }

@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void sayHello(int n)    // Function Definition -> With Parameters!
+void sayHello(int num)    // Function Definition -> With num is it's Parameter!
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < num; i++)
     {
         cout << "Hello World" << endl;
     }
@@ -17,7 +17,7 @@ int main()
     
     cout << "\n";
 
-    sayHello(n);    // Function Calling -> Arguements Passed!
+    sayHello(n);    // Function Calling -> n is Arguement Passed!
 
     return 0;
 }
@@ -26,7 +26,7 @@ int main()
     Function: A function is a block of code that performs a specific task.
 
     Syntax:
-        return_type function_name(parameters)
+        return_type function_name(p_type parameter1, p_type parameter2, ...)
         {
             // code
 

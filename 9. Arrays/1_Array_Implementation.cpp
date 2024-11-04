@@ -19,7 +19,11 @@ int main()
     int arr3[5] = {1}; // first element is initialized to 1 and rest are initialized to 0
     int arr4[5]; // no initialization, elements are garbage values   
 
+    int size = sizeof(arr) / sizeof(arr[0]); // Total number of element in array = total size of array / size of first (anyone) element
+
     cout << sizeof(arr) << " Bytes!" << endl; // Output: 20 (5 * 4 bytes)
+    cout << (sizeof(arr) / sizeof(arr[0])) << " total no. of Elements in arr!" << endl; // Output: 5
+
     return 0;
 }
 

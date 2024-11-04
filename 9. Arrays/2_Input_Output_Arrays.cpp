@@ -3,10 +3,19 @@ using namespace std;
 
 int main()
 {
-    int marks[5] = {7, 5, 2, 1, 3};
-    int size = sizeof(marks) / sizeof(marks[0]);
+    int arr[5];
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    // INPUT:-
+    cout << "Enter the elements of the array: ";
     for(int i = 0; i < size; i++){
-        cout << marks[i] << " ";
+        cin >> arr[i];
+    }
+
+    // OUTPUT:-
+    cout << "Elements of the arrays are: ";
+    for(int i = 0; i < size; i++){
+        cout << arr[i] << " ";
     }
     cout << "\n";
     

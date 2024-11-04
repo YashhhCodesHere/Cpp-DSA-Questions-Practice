@@ -1,6 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    * (Astrik) is used to:-
+    - Declare a pointer.
+    - Dereference a pointer.
+    - Multiply two numbers.
+*/
+
 int main()
 {
     int a = 10;

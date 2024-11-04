@@ -9,7 +9,7 @@ using namespace std;
     Hexadecimal number is used because it's easier to represent large numbers in a shorter format -> Base 16 i.e. 0-9 and A-F.
 */
 
-// Pointers take 8 bytes of memory in 64-bit OS and 4 bytes in 32-bit OS.
+// Pointers take 8 bytes of memory in general, irrespective of the datatype of the variable it's pointing to.
 
 int main()
 {

@@ -4,6 +4,7 @@ using namespace std;
 /*
     Prerequisite: Sorted Array!
     Binary Search is a searching algorithm for finding an element's position in a sorted array.
+    Time Complexity of binary search is O(log n).
 
     The expression 'mid = (start + end) / 2' can lead to integer overflow in some cases,
     so it is better to use (mid = start + (end - start) / 2).

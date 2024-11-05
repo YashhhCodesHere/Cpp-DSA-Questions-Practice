@@ -19,5 +19,7 @@ int main()
     }
     cout << "\n";
     
+    int z = 10;
+    arr = z; // Error: As array name is a constant pointer pointing to the first element of the array, so it can't be Modified!
     return 0;
 }

@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Void Functions can't be used with cout, cin, return, etc.
+// cout should be written with return type functions.
+
 void sayHello(int num)    // Function Definition -> With num is it's Parameter!
 {
     for (int i = 0; i < num; i++)

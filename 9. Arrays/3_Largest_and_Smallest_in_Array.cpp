@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//  For printing index -> cout << i << endl;
+//  For printing element -> cout << arr[i] << endl;
+
 int main()
 {
     int n;

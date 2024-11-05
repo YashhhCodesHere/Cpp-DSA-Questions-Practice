@@ -22,14 +22,15 @@ int main()
 
     printArray(arr, size);
 
-    // // OUTPUT:-
-    // cout << "Elements of the arrays are: ";
-    // for(int i = 0; i < size; i++){
-    //     cout << arr[i] << " ";
-    // }
-    // cout << "\n";
+    // OUTPUT:-
+    cout << "Elements of the arrays are: ";
+    for(int i = 0; i < size; i++){
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
     
     int z = 10;
-    // arr = z; // Error: As array name is a constant pointer pointing to the first element of the array, so it can't be Modified!
+//  arr = z; // Error: As array name is a constant pointer pointing to the first element of the array, so it can't be Modified!
+    
     return 0;
 }

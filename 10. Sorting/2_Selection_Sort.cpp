@@ -5,7 +5,7 @@ using namespace std;
     Selection Sort is sorting algorithm that is based on the idea of finding the minimum or maximum element in an unsorted array and then putting it in its correct position in a sorted array.
     In this we imagine that the array is divided into two parts: sorted and unsorted!
     then, we select the minimum element from the unsorted array and swap it with the first element of the unsorted array, & continously do this until the array is sorted.
-
+    Time Complexity -> O(n^2)
 */
 
 void selectionSort(int *arr, int n){

@@ -25,6 +25,7 @@ int main()
 
 /*
     In 2D arrays:-
+    - int arr[n][m]; -> n = Rows, m = Columns.
     - Rows are horizontal & Columns are vertical.
     - Rows & Columns indexes start from 0.
     - Cells -> Rows x Columns -> Can be accessed using indexes like studentMarks[1][2] -> 95

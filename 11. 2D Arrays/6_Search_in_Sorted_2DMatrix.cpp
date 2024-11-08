@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
 
+/*
+    Here, we are using binary search to search the key in the matrix,
+    which means while using Row-wise binary search, It isn't necessary that Columns must be sorted.
+    Similarly, while using Column-wise binary search, It isn't necessary that Rows must be sorted.
+    
+    But whenever we are given that Rows and Columns are sorted, then these of the two methods should be avoided and,
+    We should Prefer to use the 'Staircase Search' method.
+*/
+
 // Time Complexity -> O(n*log(m))
 int binarySearchRow(int row[], int n, int key) {
     int left = 0;
@@ -18,6 +27,25 @@ int binarySearchRow(int row[], int n, int key) {
         }
     }
     return -1;  // Key not found in the row
+}
+
+// Time Complexity -> O(m*log(n))
+int binarySearchColumn(int matrix[][4], int m, int col, int key) {
+    int left = 0;
+    int right = m - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (matrix[mid][col] == key) {
+            return mid;  // Return the row index if key is found
+        } else if (matrix[mid][col] < key) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1;  // Key not found in the column
 }
 
 void searchMatrix(int matrix[][4], int m, int n, int key, int &rowIndex, int &colIndex) {

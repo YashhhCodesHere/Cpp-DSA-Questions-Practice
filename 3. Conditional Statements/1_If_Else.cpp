@@ -5,6 +5,8 @@ using namespace std;
 // If the condition is true, then the statements inside the if block will be executed.
 // Else, the statements inside the else block will be executed.
 
+// **Whenever we want to use nested if-else statements, we mostly prefer && and || operators in a single if statement.
+
 int main()
 {
     int age;

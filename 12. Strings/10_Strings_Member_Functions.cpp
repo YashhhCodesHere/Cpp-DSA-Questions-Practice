@@ -24,5 +24,7 @@ int main()
 
     //4. str.find("substring"):-
     cout << "Index of substring 'LO': " << str.find("LO") << "\n"; // This will return the index of the first occurrence of the substring.
+
+    
     return 0;
 }

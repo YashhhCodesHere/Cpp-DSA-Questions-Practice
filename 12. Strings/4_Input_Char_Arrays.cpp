@@ -12,13 +12,13 @@ using namespace std;
 
 int main()
 {
-//     char word[50];
-// //  1. Using cin >> word;
-//     cout << "Enter a word: ";
-//     cin >> word;    // cin stops reading the input when it encounters a space.
+    char word[50];
+//  1. Using cin >> word;
+    cout << "Enter a word: ";
+    cin >> word;    // cin stops reading the input when it encounters a space.
 
-//     cout << word << "\n";   // If we enter 'Hello World', then only 'Hello' will be printed.
-//     cout << "The length of the word is: " << strlen(word) << "\n";   // strlen() is used to calculate the length of the string.
+    cout << word << "\n";   // If we enter 'Hello World', then only 'Hello' will be printed.
+    cout << "The length of the word is: " << strlen(word) << "\n";   // strlen() is used to calculate the length of the string.
 
 //  2. Using cin.getline(sentence, 50);
     char sentence[50];

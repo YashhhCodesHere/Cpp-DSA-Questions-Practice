@@ -17,6 +17,8 @@ int main(){
     int a = 5, b = 9;   // 5 = 0101, 9 = 1001
     cout << (a & b) << endl; // 1
     cout << (a | b) << endl; // 13
+    cout << (a ^ b) << endl; // 12
+    
     return 0;
 }
 

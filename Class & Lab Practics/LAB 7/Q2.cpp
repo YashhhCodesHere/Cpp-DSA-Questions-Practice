@@ -12,7 +12,10 @@ void towerOfHanoi(int n, char Source, char Destination, char Helper) {
 }
 
 int main() {
-    int n = 4; // Number of disks
+    int n; // Number of disks
+    cout << "Enter the number of disks: ";
+    cin >> n;
+    
     towerOfHanoi(n, 'A', 'C', 'B'); // A, B and C are names of rods
     return 0;
 }

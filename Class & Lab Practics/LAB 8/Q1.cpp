@@ -17,6 +17,7 @@ public:
     }
 
     void enqueue(int value) {
+        cout << "Enqueue: " << value << endl;
         if ((rear + 1) % size == front) {
             cout << "Queue is full" << endl;
             return;
@@ -29,6 +30,7 @@ public:
     }
 
     void dequeue() {
+        cout << "Dequeue: " << queue[front] << endl;
         if (front == -1) {
             cout << "Queue is empty" << endl;
             return;
@@ -41,6 +43,7 @@ public:
     }
 
     void display() {
+        cout << "Elements in the queue: ";
         if (front == -1) {
             cout << "Queue is empty" << endl;
             return;

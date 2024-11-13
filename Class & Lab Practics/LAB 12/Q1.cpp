@@ -19,7 +19,7 @@ int main(){
         }
     }
 
-    cout << "Sorted array: ";
+    cout << "\nArray after performing Bubble Sort: ";
     for (int i = 0; i < n; i++) {
         cout << arr[i] << " ";
     }

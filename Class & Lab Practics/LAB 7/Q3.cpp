@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int fibonacci(int n) {
-    if (n <= 1)
+int fibonacci(int n){
+    if(n <= 1){
         return n;
-    return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+    int fib = fibonacci(n-1) + fibonacci(n-2);
+    return fib;
 }
 
 int main() {
     int n;
-    cout << "Enter the number of terms: ";
+    cout << "Enter the value of n: ";
     cin >> n;
-
-    cout << "Fibonacci Series: ";
-    for (int i = 0; i < n; i++) {
-        cout << fibonacci(i) << " ";
-    }
-    cout << endl;
     
+    for(int i = n; i >= 1; i--){
+        cout << i-1 << "th fibonacci is: " << fibonacci(i) << "\n";
+    }
+
     return 0;
 }

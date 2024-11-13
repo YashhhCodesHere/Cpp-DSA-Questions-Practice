@@ -60,15 +60,19 @@ void printArray(int arr[], int size) {
 }
 
 int main() {
-    int arr[] = {12, 11, 13, 5, 6, 7};
-    int arr_size = sizeof(arr) / sizeof(arr[0]);
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter the elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
 
-    cout << "Given array is \n";
-    printArray(arr, arr_size);
 
-    mergeSort(arr, 0, arr_size - 1);
+    mergeSort(arr, 0, n-1);
 
-    cout << "\nSorted array is \n";
-    printArray(arr, arr_size);
+    cout << "\nArray after performing Merge Sort: ";
+    printArray(arr, n);
     return 0;
 }

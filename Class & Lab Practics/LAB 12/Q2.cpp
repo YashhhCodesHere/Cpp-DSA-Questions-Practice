@@ -31,10 +31,17 @@ void printArray(int arr[], int size) {
 }
 
 int main() {
-    int arr[] = {10, 7, 8, 9, 1, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter the elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
     quickSort(arr, 0, n - 1);
-    cout << "Sorted array: \n";
+    cout << "\nArray after performing Quick Sort: ";
     printArray(arr, n);
     return 0;
 }

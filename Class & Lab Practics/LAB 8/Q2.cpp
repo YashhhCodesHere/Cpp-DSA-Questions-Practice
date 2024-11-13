@@ -1,6 +1,8 @@
 #include <iostream>
 #define SIZE 5
 
+using namespace std;
+
 class CircularQueue {
 private:
     int items[SIZE], front, rear;
@@ -25,19 +27,19 @@ public:
 
     void enqueue(int element) {
         if (isFull()) {
-            std::cout << "Queue is full\n";
+            cout << "Queue is full\n";
         } else {
             if (front == -1) front = 0;
             rear = (rear + 1) % SIZE;
             items[rear] = element;
-            std::cout << "Inserted " << element << std::endl;
+            cout << "Inserted " << element << endl;
         }
     }
 
     int dequeue() {
         int element;
         if (isEmpty()) {
-            std::cout << "Queue is empty\n";
+            cout << "Queue is empty\n";
             return (-1);
         } else {
             element = items[front];
@@ -54,14 +56,14 @@ public:
     void display() {
         int i;
         if (isEmpty()) {
-            std::cout << "Queue is empty\n";
+            cout << "Queue is empty\n";
         } else {
-            std::cout << "Front -> " << front << std::endl;
-            std::cout << "Items -> ";
+            cout << "Front -> " << front << endl;
+            cout << "Items -> ";
             for (i = front; i != rear; i = (i + 1) % SIZE)
-                std::cout << items[i] << " ";
-            std::cout << items[i] << std::endl;
-            std::cout << "Rear -> " << rear << std::endl;
+                cout << items[i] << " ";
+            cout << items[i] << endl;
+            cout << "Rear -> " << rear << endl;
         }
     }
 };
@@ -77,8 +79,8 @@ int main() {
 
     q.display();
 
-    std::cout << "Deleted value = " << q.dequeue() << std::endl;
-    std::cout << "Deleted value = " << q.dequeue() << std::endl;
+    cout << "Deleted value = " << q.dequeue() << endl;
+    cout << "Deleted value = " << q.dequeue() << endl;
 
     q.display();
 

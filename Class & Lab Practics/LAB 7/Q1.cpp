@@ -1,21 +1,23 @@
 #include <iostream>
 using namespace std;
 
-int fibonacci(int n){
-    if(n <= 1){
-        return n;
+int factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
     }
-    int fib = fibonacci(n-1) + fibonacci(n-2);
-    return fib;
 }
 
 int main() {
-    int n;
-    cout << "Enter the value of n: ";
-    cin >> n;
-    
-    for(int i = n; i >= 1; i--){
-        cout << i << "th fibonacci is: " << fibonacci(i) << "\n";
+    int number;
+    cout << "Enter a positive integer: ";
+    cin >> number;
+
+    if (number < 0) {
+        cout << "Factorial is not defined for negative numbers." << endl;
+    } else {
+        cout << "Factorial of " << number << " is " << factorial(number) << endl;
     }
 
     return 0;

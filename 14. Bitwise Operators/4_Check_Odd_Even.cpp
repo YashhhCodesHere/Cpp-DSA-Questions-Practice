@@ -25,3 +25,10 @@ int main(){
 
     return 0;
 }
+
+/*
+    While BitMasking, Always remember:-
+    Use:
+        To remove any set: n & ~(1 << i)
+        To set any bit: n | (1 << i)
+*/

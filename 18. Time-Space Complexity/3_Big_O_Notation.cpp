@@ -40,8 +40,8 @@ int main(){
     cout << "=> lim  [f(n)/g(n)] = lim [3n^2 + 4n + 5/n^2]\n";
     cout << "  (n->∞)             (n->∞) \n\n";
 
-    cout << "This means BIG OH is related to some function g(n) which is connected to that mathematical function (f(n)) actually!";
+    cout << "This means BIG OH is related to some function g(n) which is connected to that mathematical function (f(n)) actually!\n";
 
-
+    cout << "lim |f(n)/g(n)| < ∞ \n";
     return 0;
 }

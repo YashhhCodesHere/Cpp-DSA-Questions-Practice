@@ -25,8 +25,9 @@ void quickSort(int arr[], int low, int high) {
 }
 
 void printArray(int arr[], int size) {
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++){
         cout << arr[i] << " ";
+    } 
     cout << endl;
 }
 

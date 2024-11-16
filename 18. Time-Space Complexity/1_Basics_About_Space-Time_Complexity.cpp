@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity => Input Size  v/s  Number of Operations
+// Space Complexity => Input Size  v/s  Auxiliary Space(Extra memory)
+
 /*
     Time & Space complexity are considered for ('n' -> very large input sizes ). They are used to analyze the efficiency of an algorithm.
     T.C (Less) & S.C (Less) -> Efficient Algorithm/Program

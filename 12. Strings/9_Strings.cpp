@@ -5,7 +5,8 @@ using namespace std;
 /*
     str.length() -> Is a member function of string class that returns the length of the string.
     ' . ' -> Dot Operator is used to access the member functions of the class.
-
+    
+    Generally String takes 28 bytes, but it can vary depending on the compiler.
 */
 
 int main()

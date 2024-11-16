@@ -17,6 +17,7 @@ using namespace std;
     Dot(.) Operator: It is used to access the Data Members/Functions of an object.
     Arrow(->) Operator: It is used to access the Data Members/Functions of a pointer to an object.
     Scope Resolution(::) Operator: It is used to access the static members of a class.
+    'this' Pointer: It is a pointer which points to the current object. ex: this->name or *(this).name
 */
 
 int main(){

@@ -15,7 +15,7 @@ private: // Access Specifier
     int roll_no;    // 4 bytes
     string name;    // 28 bytes
     int age;    // 4 bytes
-    float cgpa;   // 4 bytes
+    float cgpa = 9.5;   // 4 bytes
 
 public:
     void getCGPA(){

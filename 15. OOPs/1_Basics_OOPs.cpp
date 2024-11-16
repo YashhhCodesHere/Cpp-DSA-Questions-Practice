@@ -13,14 +13,29 @@ using namespace std;
     So, By definition:-
     Class: A class is a blueprint for creating the object.
     Object: An object is an instance of a class.
+
+    Dot(.) Operator: It is used to access the Data Members/Functions of an object.
+    Arrow(->) Operator: It is used to access the Data Members/Functions of a pointer to an object.
+    Scope Resolution(::) Operator: It is used to access the static members of a class.
 */
 
 int main(){
     
+/*
+    Encapsulation: It is the process of wrapping up of data members and member functions into a single unit called class. 
+                   It also implements the Data Hiding(Using Access Modifiers).
+*/
+
     return 0;
 }
 
 /*
+    OOPs have 4 main pillars:-
+    1. Encapsulation => Data Hiding
+    2. Inheritance => Code Reusability
+    3. Abstraction => Data Security
+    4. Polymorphism => Flexibility
+
     Syntax:-
 
     class class_name{

@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity: O(2^n) -> Exponential Time Complexity
+// Space Complexity: O(n) -> Recursive Stack Space
+
 int fibonacci(int n){
     if(n <= 1){
         return n;

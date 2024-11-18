@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 int printSum(int n){
     if(n == 1){
         return 1;

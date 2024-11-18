@@ -43,7 +43,6 @@ void quickSort(int *arr, int startIdx, int endIdx){
     quickSort(arr, pivotIdx +1, endIdx); // Sort the Right Sub-Array
 }
 
-
 void printArray(int *arr, int n){
     for(int i=0; i<n; i++){
         cout << arr[i] << " ";

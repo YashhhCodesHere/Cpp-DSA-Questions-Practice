@@ -5,7 +5,9 @@ struct Node {
     int data;
     Node* left;
     Node* right;
-    Node(int val) : data(val), left(nullptr), right(nullptr) {}
+    Node(int val) : data(val), left(nullptr), right(nullptr) {
+        cout << "Inserted node with value: " << val << endl;
+    }
 };
 
 bool isBSTUtil(Node* node, Node* left, Node* right) {

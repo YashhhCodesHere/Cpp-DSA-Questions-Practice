@@ -11,6 +11,7 @@ struct TreeNode {
 
 // Function to find the height of the binary tree
 int findHeight(TreeNode* root) {
+    
     if (root == NULL) {
         return 0;
     }

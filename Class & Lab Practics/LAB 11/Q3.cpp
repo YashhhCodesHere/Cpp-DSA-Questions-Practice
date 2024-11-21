@@ -5,28 +5,18 @@
 using namespace std;
 
 class Graph {
-    int V; // Number of vertices
-    vector<vector<int>> adj; // Adjacency list
+    int V;
+    vector<vector<int>> adj;
 
 public:
-    Graph(int V);
-    void addEdge(int v, int w);
+    Graph(int V) : V(V), adj(V) {}
+    void addEdge(int v, int w) { adj[v].push_back(w); }
     void BFS(int s);
 };
-
-Graph::Graph(int V) {
-    this->V = V;
-    adj.resize(V);
-}
-
-void Graph::addEdge(int v, int w) {
-    adj[v].push_back(w);
-}
 
 void Graph::BFS(int s) {
     vector<bool> visited(V, false);
     queue<int> q;
-
     visited[s] = true;
     q.push(s);
 
@@ -35,10 +25,10 @@ void Graph::BFS(int s) {
         cout << s << " ";
         q.pop();
 
-        for (auto i = adj[s].begin(); i != adj[s].end(); ++i) {
-            if (!visited[*i]) {
-                visited[*i] = true;
-                q.push(*i);
+        for (int i : adj[s]) {
+            if (!visited[i]) {
+                visited[i] = true;
+                q.push(i);
             }
         }
     }

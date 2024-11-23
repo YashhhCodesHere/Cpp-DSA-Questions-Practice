@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-    Runtime Overriding:- (Run Time Polymorphism) -> Inheritance is used here.
+    Runtime Overriding:- (Run Time Polymorphism) -> Inheritance is used here.       :.(Overridden = Redefined)
     Here, Both Parent & Child class have the same function name and signature, where child class's function takes priority over parent class's function.
     Priority: Child Class > Parent Class
 

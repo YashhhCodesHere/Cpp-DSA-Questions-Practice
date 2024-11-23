@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// ENCAPSULATION: Binding DATA & FUNCTIONS together in a single unit called CLASS.
+// ABSRACTION: Hiding the unnecessary details from the user and only showing the necessary details to the user.
+
 /*
     OOPs is basically a style of writing a code in more organized way.
     Till now, we have been writing code in procedural way -> Functional Programming.

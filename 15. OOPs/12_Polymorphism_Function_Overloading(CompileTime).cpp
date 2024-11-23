@@ -40,7 +40,12 @@ int main(){
     p.show("Hello");
     // The above two functions have same name, but acts different depending on the arguments passed. -> Compile Time Polymorphism.
 
-
-
     return 0;
 }
+
+/*
+    Function Overloading is Compile Time Polymorphism, while Function Overriding is Run Time Polymorphism.
+
+    Function Overloading -> Same Function Name, Different Parameters => Works differently based on the parameters passed.
+    Function Overriding -> Same Function Name, Same Parameters,  Different Classes. => Prioritise the child class's function. (Inheritance Used)
+*/

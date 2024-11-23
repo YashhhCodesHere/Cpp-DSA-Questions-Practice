@@ -2,31 +2,36 @@
 using namespace std;
 
 /*
-    Virtual Function:-    (Runtime Polymorphism)
+    Virtual Function:-  (Runtime Polymorphism) 
+    A member function which is defined in the parent class, is used to be redefined in the child class(Compulsory).alignas
+    'virtual' keyword is used to make a function in parent class as virtual,& in child class, '
+
+    Syntax:-
+    virtual return_type function_name(){
+        // code
+    }
     
 */
 
 class Parent{
     public:
-        void show(){
-            cout << "Parent's Show Function \n";
+        virtual void hello(){
+            cout << "Parent's Hello! \n";
         }
 };
 
 class Child : public Parent{
     public:
-        void show(){
-            cout << "Child's Show Function \n";
+        void hello(){
+            cout << "Child's Hello! \n";
         }
 };
 
 int main(){
-
-    Parent p;
     Child c;
     
-    p.show();
-    c.show();
+    Parent *p = &c;
+    p -> hello(); // Child's Hello!
 
     return 0;
 }

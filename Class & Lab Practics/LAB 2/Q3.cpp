@@ -1,38 +1,36 @@
-#include <iostream>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int rows, cols;
-    cout << "Enter the number of rows: ";
-    cin >> rows;
-    cout << "Enter the number of columns: ";
-    cin >> cols;
+    int arr[3][3] = {{1, 2, 3},
+                     {4, 5, 6},
+                     {7, 8, 9}};
 
-    int matrix[rows][cols];
-
-    cout << "Enter the elements of the matrix:" << endl;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            cin >> matrix[i][j];
+    cout << "Original matrix: " << endl;
+    // Print the original matrix
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << "\n";
+    }
+    
+    // Transpose the matrix in-place
+    for (int i = 0; i < 3; i++) {
+        for (int j = i + 1; j < 3; j++) { // Note: j starts from i + 1
+            swap(arr[i][j], arr[j][i]);
         }
     }
+    
 
-    cout << "Original Matrix:" << endl;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            cout << matrix[i][j] << " ";
+    cout << "Transposed matrix: " << endl;
+    // Print the transposed matrix
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << arr[i][j] << " ";
         }
-        cout << endl;
+        cout << "\n";
     }
-
-    cout << "Transposed Matrix:" << endl;
-    for (int i = 0; i < cols; i++) {
-        for (int j = 0; j < rows; j++) {
-            cout << matrix[j][i] << " ";
-        }
-        cout << endl;
-    }
-
+    
     return 0;
 }

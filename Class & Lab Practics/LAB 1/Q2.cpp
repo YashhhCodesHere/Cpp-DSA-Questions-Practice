@@ -32,11 +32,11 @@ int main() {
         n--;
 
         // Print the updated array
-        std::cout << "Array after deleting element at position " << pos << ": ";
+        cout << "Array after deleting element at position " << pos << ": ";
         for (int i = 0; i < n; i++) {
-            std::cout << arr[i] << " ";
+            cout << arr[i] << " ";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 
     return 0;

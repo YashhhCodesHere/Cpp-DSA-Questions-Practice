@@ -21,6 +21,9 @@ public:
 
     void insert(int value) {
         Node* newNode = new Node(value);
+        if(!head){
+            head = newNode;
+        }
         newNode->next = head;
         head = newNode;
     }

@@ -27,7 +27,7 @@ int partition(int *arr, int startIdx, int endIdx){
         }
     }
     i++;
-    swap(arr[i], arr[endIdx]);
+    swap(arr[i], pivot);
 
     return i;    // Now, Pivot Index is i: All elements to the left of i are smaller than pivot and all elements to the right of i are greater than pivot.
 }

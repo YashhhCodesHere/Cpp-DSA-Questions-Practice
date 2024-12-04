@@ -35,7 +35,6 @@ void merge(int arr[], int left, int mid, int right){
     // Copy the Sorted Elements back to Original Array:-
     for(int idx = left, x = 0; idx <= right; idx++){
         arr[idx] = temp[x++];
-
     }
 
 }

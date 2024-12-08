@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 // Unordered map is preferred over map because it has O(1) time complexity for insertion, deletion and searching.
+// Although we can use arrays to store the frequency of each element, but it will take O(n) time complexity for each query.
 int main()
 {
     int n;

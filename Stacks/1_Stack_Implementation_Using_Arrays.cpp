@@ -4,8 +4,8 @@ using namespace std;
 class Stack
 {
 public:
-    int top;
     int arr[100];
+    int top;
     int maxSize;
 
     Stack(int size = 100)

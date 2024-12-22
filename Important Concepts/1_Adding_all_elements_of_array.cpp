@@ -14,6 +14,8 @@ int main(){
     int sumOfElement = accumulate(arr, arr+n, 0);
 
     cout << sumOfElement << "\n";
-    
+
+    vector<int> vec(arr, arr+(n/2));    // Copy first half of the array to the vector
+
     return 0;
 }

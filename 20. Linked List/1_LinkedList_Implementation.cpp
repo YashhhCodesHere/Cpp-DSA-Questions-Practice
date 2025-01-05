@@ -2,10 +2,10 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* next;
-public:
+
     Node(int val){
         data = val;
         next = nullptr;
@@ -29,6 +29,16 @@ public:
         }
         newNode -> next = head;
         head = newNode;
+    }
+
+    void push_back(int val){
+        Node* newNode = new Node(val);
+        if(head == nullptr){
+            head = tail = newNode;
+            return;
+        }
+        tail -> next = newNode;
+        tail = newNode;
     }
 };
 

@@ -10,6 +10,13 @@ public:
         data = val;
         next = nullptr;
     }
+
+    ~Node(){
+        if(next != nullptr){
+            delete next;
+            next = nullptr;
+        }
+    }
 };
 
 class List{
@@ -19,6 +26,13 @@ public:
     List(){
         head = nullptr;
         tail = nullptr;
+    }
+
+    ~List(){
+        if(head != nullptr){
+            delete head;
+            head = nullptr;
+        }
     }
 
     void push_front(int val){
@@ -44,8 +58,8 @@ public:
     void insert(int val, int pos){
         Node* newNode = new Node(val);
         Node* temp = head;
-        for(int i = 1; i < pos; i++){
-            if(temp == nullptr){    // Corner case!
+        for(int i = 1; i < pos; i++){   // For 0th based index!
+            if(temp == nullptr){    // Corner case -> When Position is greater than size of List!
                 cout << "Position is INVALID!\n";
                 return;
             }
@@ -70,12 +84,11 @@ int main(){
     ll.push_front(3);
     ll.push_front(2);
     ll.push_front(1);
+
     ll.push_back(4);
     ll.push_back(5);
 
-
-
-    ll.insert(0, 2);
+    ll.insert(100, 2);
 
     ll.printList();
 

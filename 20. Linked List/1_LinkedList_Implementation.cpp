@@ -128,15 +128,6 @@ public:
         return helper_for_search_rec(head, key);
     }
 
-    void printList(){
-        Node* temp = head;
-        while(temp != nullptr){
-            cout << temp -> data << " -> ";
-            temp = temp -> next;
-        }
-        cout << "NULL\n";
-    }
-
     void reverse(){
         Node* prev = nullptr;
         Node* curr = head;
@@ -149,8 +140,17 @@ public:
             prev = curr;
             curr = forw;
         }
-        curr = prev;
+        head = prev;
         printList();
+    }
+
+    void printList(){
+        Node* temp = head;
+        while(temp != nullptr){
+            cout << temp -> data << " -> ";
+            temp = temp -> next;
+        }
+        cout << "NULL\n";
     }
 };
 
@@ -166,6 +166,16 @@ int main(){
     ll.insert(100, 2);
 
     ll.printList();
+    
+    ll.pop_front();
+    ll.printList();
+
+    ll.pop_back();
+    ll.printList();
+
+    cout << ll.search_itr(10) << "\n";
+
+    cout << ll.search_rec(3) << "\n";
 
     ll.reverse();
 

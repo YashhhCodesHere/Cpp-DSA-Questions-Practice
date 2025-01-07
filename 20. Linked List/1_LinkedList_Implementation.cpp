@@ -67,6 +67,17 @@ public:
         tail = newNode;
     }
 
+    void pop_back(){
+        Node* temp = head;
+        while(temp -> next -> next != nullptr){
+            temp = temp -> next;
+        }
+        Node* toDelete = temp -> next;
+        tail = temp;
+        temp -> next = nullptr;
+        delete toDelete;
+    }
+
     void insert(int val, int pos){
         Node* newNode = new Node(val);
         Node* temp = head;
@@ -79,6 +90,41 @@ public:
         }
         newNode -> next = temp -> next;
         temp -> next = newNode;
+    }
+
+    int search_itr(int key){
+        cout << "Element found at index: ";
+        Node* temp = head;
+        int idx = 0;
+
+        while(temp != nullptr){
+            if(temp -> data == key){
+                return idx;
+            }
+            idx++;
+            temp = temp -> next;
+        }
+        return -1;  // Key Not Found!
+    }
+
+    int helper_for_search_rec(Node* temp, int key){
+        if(temp == nullptr){    // Base Case -> When Key not found!
+            return -1;
+        }
+
+        if(temp -> data == key){    // Searching!
+            return 0;
+        }
+        int idx = helper_for_search_rec(temp -> next, key);
+
+        if(idx == -1){
+            return -1;
+        }
+        return idx + 1;
+
+    }
+    int search_rec(int key){
+        helper_for_search_rec(head, key);
     }
 
     void printList(){
@@ -105,8 +151,11 @@ int main(){
     ll.printList();
     
     ll.pop_front();
-
     ll.printList();
 
+    ll.pop_back();
+    ll.printList();
+
+    cout << ll.search_itr(10) << "\n";
     return 0;
 }

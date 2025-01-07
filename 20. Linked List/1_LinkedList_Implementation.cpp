@@ -45,6 +45,18 @@ public:
         head = newNode;
     }
 
+    void pop_front(){
+        if(head == nullptr){
+            cout << "List is already empty!\n";
+            return;
+        }
+        Node* temp = head;
+        head = head -> next;
+
+        temp -> next = nullptr;
+        delete temp;
+    }
+
     void push_back(int val){
         Node* newNode = new Node(val);
         if(head == nullptr){
@@ -89,6 +101,10 @@ int main(){
     ll.push_back(5);
 
     ll.insert(100, 2);
+
+    ll.printList();
+    
+    ll.pop_front();
 
     ll.printList();
 

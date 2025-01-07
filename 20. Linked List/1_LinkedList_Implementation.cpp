@@ -107,6 +107,7 @@ public:
         return -1;  // Key Not Found!
     }
 
+//  Searching through Recursion:-
     int helper_for_search_rec(Node* temp, int key){
         if(temp == nullptr){    // Base Case -> When Key not found!
             return -1;
@@ -135,6 +136,22 @@ public:
         }
         cout << "NULL\n";
     }
+
+    void reverse(){
+        Node* prev = nullptr;
+        Node* curr = head;
+        Node* forw = nullptr;
+
+        while(curr != nullptr){
+            forw = curr -> next;
+
+            curr -> next = prev;
+            prev = curr;
+            curr = forw;
+        }
+        curr = prev;
+        printList();
+    }
 };
 
 int main(){
@@ -149,16 +166,8 @@ int main(){
     ll.insert(100, 2);
 
     ll.printList();
-    
-    ll.pop_front();
-    ll.printList();
 
-    ll.pop_back();
-    ll.printList();
-
-    cout << ll.search_itr(10) << "\n";
-
-    cout << ll.search_rec(3) << "\n";
+    ll.reverse();
 
     return 0;
 }

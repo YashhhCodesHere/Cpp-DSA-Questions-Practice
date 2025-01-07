@@ -124,7 +124,7 @@ public:
 
     }
     int search_rec(int key){
-        helper_for_search_rec(head, key);
+        return helper_for_search_rec(head, key);
     }
 
     void printList(){
@@ -157,5 +157,8 @@ int main(){
     ll.printList();
 
     cout << ll.search_itr(10) << "\n";
+
+    cout << ll.search_rec(3) << "\n";
+
     return 0;
 }

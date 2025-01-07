@@ -132,6 +132,7 @@ public:
         Node* prev = nullptr;
         Node* curr = head;
         Node* forw = nullptr;
+        tail = head;
 
         while(curr != nullptr){
             forw = curr -> next;

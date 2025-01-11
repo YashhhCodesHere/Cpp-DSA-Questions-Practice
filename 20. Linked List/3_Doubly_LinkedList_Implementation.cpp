@@ -45,6 +45,21 @@ public:
         delete temp;
     }
 
+    void push_back(int val){
+        Node* newNode = new Node(val);
+        if(head == nullptr){
+            head = tail = newNode;
+            return;
+        }
+        Node* temp = head;
+        while(temp -> next != nullptr){
+            temp = temp -> next;
+        }
+        temp -> next = newNode;
+        newNode -> prev = temp;
+        tail = newNode;
+    }
+
     void printList(){
         Node* temp = head;
 
@@ -63,12 +78,13 @@ int main(){
     dbll.push_front(3);
     dbll.push_front(2);
     dbll.push_front(1);
+    dbll.push_back(5);
 
     dbll.printList();
 
-    dbll.pop_front();
+    // dbll.pop_front();
 
-    dbll.printList();
+    // dbll.printList();
 
     return 0;
 }

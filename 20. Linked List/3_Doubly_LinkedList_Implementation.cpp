@@ -82,9 +82,9 @@ int main(){
 
     dbll.printList();
 
-    // dbll.pop_front();
+    dbll.pop_front();
 
-    // dbll.printList();
+    dbll.printList();
 
     return 0;
 }

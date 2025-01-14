@@ -31,6 +31,5 @@ int main(){
     }else{
         cout << "The " << i << "th bit of " << n << " is already set.\n";
     }
-
     return 0;
 }

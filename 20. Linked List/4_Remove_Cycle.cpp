@@ -165,11 +165,15 @@ Node* remove_cycle(Node* head){
         if(slow == fast){
             slow = head;
             cout << "Cycle Detected!\n";
+            Node* prev = nullptr;
             while(slow != fast){
+                prev = fast;
+                
                 slow = slow -> next;
                 fast = fast -> next;
             }
             cout << "Removing Cycle!\n";
+            prev -> next = nullptr;
             return slow;
         }
     }

@@ -20,9 +20,9 @@ public:
 };
 
 class List{
+public:
     Node* head;
     Node* tail;
-public:
     List(){
         head = nullptr;
         tail = nullptr;
@@ -197,25 +197,37 @@ Node* merge(Node* left, Node* right){
         ans.push_back(j -> data);
         j = j -> next;
     }
-    
-    return ans;
+
+    return ans.head;
 }
 
-void mergeSort(Node* leftHead){
+Node* mergeSort(Node* leftHead){
     if(leftHead == nullptr || leftHead -> next == nullptr){
-        return;
+        return leftHead;
     }
 
     Node* rightHead = splitAtMid(leftHead);
 
-    mergeSort(leftHead);
-    mergeSort(rightHead);
+    Node* left = mergeSort(leftHead);
+    Node* right = mergeSort(rightHead);
 
-    merge(leftHead, rightHead);
+    return merge(left, right);
 }
 
 int main(){
+    List ll;
+     
+    ll.push_back(10);
+    ll.push_back(20);
+    ll.push_back(30);
+    ll.push_back(40);
+    ll.push_back(50);
 
+    ll.printList();
+
+    ll.head = mergeSort(ll.head);
+    
+    ll.printList();
 
     return 0;
 }

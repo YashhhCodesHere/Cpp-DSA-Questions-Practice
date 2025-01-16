@@ -167,7 +167,7 @@ Node* splitAtMid(Node* head){
     }
 
     if(prev != nullptr){    // If only one Node! -> While loop didn't ran atleast once
-    prev -> next = nullptr;
+        prev -> next = nullptr;
     }
 
     return slow;

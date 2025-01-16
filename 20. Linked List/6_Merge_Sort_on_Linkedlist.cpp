@@ -155,33 +155,67 @@ public:
     }
 };
 
-Node* remove_cycle(Node* head){
+Node* splitAtMid(Node* head){
     Node* slow = head;
     Node* fast = head;
+    Node* prev = nullptr;   // To store previous of middle to break the connection at mid! 
 
     while(fast != nullptr && fast -> next != nullptr){
+        prev = slow;
         slow = slow -> next;
         fast = fast -> next -> next;
-        if(slow == fast){
-            slow = head;
-            cout << "Cycle Detected!\n";
-            Node* prev = nullptr;
-            while(slow != fast){
-                prev = fast;
-            
-                slow = slow -> next;
-                fast = fast -> next;
-            }
-            cout << "Removing Cycle!\n";
-            prev -> next = nullptr;
-            return slow;
+    }
+
+    if(prev != nullptr){    // If only one Node! -> While loop didn't ran atleast once
+    prev -> next = nullptr;
+    }
+
+    return slow;
+}
+
+Node* merge(Node* left, Node* right){
+    List ans;
+    Node* i = left;
+    Node* j = right;
+
+    while(i != nullptr && j != nullptr){
+        if(i -> data <= j -> data){
+            ans.push_back(i -> data);
+            i = i -> next;
+        }else{
+            ans.push_back(j -> data);
+            j = j -> next;
         }
     }
-    cout << "Cycle isn't detected!\n";
-    return nullptr;
+    
+    while(i != nullptr){
+        ans.push_back(i -> data);
+        i = i -> next;
+    }
+
+    while(j != nullptr){
+        ans.push_back(j -> data);
+        j = j -> next;
+    }
+    
+    return ans;
+}
+
+void mergeSort(Node* leftHead){
+    if(leftHead == nullptr || leftHead -> next == nullptr){
+        return;
+    }
+
+    Node* rightHead = splitAtMid(leftHead);
+
+    mergeSort(leftHead);
+    mergeSort(rightHead);
+
+    merge(leftHead, rightHead);
 }
 
 int main(){
-    
+
+
     return 0;
 }

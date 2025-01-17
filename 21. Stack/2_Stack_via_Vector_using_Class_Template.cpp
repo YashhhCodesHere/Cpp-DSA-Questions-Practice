@@ -22,12 +22,16 @@ public:
             cout << "Stack is Empty!\nCan't POP!\n";
             return;
         }
-        int lastIdx = vec.size() - 1;
-        cout << vec[lastIdx] << "\n";
+        cout << vec.back() << "\n";
+
+        // int lastIdx = vec.size() - 1;
+        // return vec[lastIdx];
     }
 
     bool isEmpty(){
-        return (vec.size() == 0);
+        return vec.empty();
+
+        // return (vec.size() == 0)
     }
 };
 
@@ -49,12 +53,7 @@ int main(){
     s.push(30);
     s.push(20);
 
-    cout << "Printing all the elements of stack:- (in LIFO Manner)\n";
-    while(!s.isEmpty()){
-        s.top(); 
-        s.pop();
-    }
 
-
+    
     return 0;
 }

@@ -2,58 +2,69 @@
 #include <vector>
 using namespace std;
 
+/*
+    Template Classes are used to create generic classes, where the data type of members is specified as a parameter.
+    like:-
+        template<class T>
+    and,
+    then we can use 'T' as a datatype for any member of the class.
+
+    But, We have to define the datatype in main function while creating object of the class.
+    like:- 
+        Stack<int> s;
+        Stack<string> s;
+        Stack<float> s;
+*/
+
+//  To store variable Datatype in stack with vector!
+template<class T>
 class Stack{
-    vector<int> vec;
+    vector<T> vec;
 public:
-    void push(int val){     // O(1)
+    void push(T val){     // O(1)
         vec.push_back(val);
     }
 
-    void pop(){
-        if(isEmpty()){
+    void pop(){     // O(1)
+        if(vec.empty()){
             cout << "Stack is Empty!\nCan't POP!\n";
             return;
         }
         vec.pop_back();
     }
 
-    void top(){
+    void top(){     //O(1)
         if(vec.empty()){
             cout << "Stack is Empty!\nCan't POP!\n";
             return;
         }
         cout << vec.back() << "\n";
-
-        // int lastIdx = vec.size() - 1;
-        // return vec[lastIdx];
     }
 
-    bool isEmpty(){
+    bool isEmpty(){     //O(1)
         return vec.empty();
-
-        // return (vec.size() == 0)
     }
 };
 
 int main(){
-    Stack s;
+    Stack<string> s;
     
-    s.push(3);
-    s.push(2);
-    s.push(1);
-
+    s.push("Coding");
+    s.push("Learn");
+    s.push("I");
 
     s.top();
-
     s.pop();
 
     s.top();
+    s.pop();
 
-    s.push(10);
-    s.push(30);
-    s.push(20);
+    s.top();
+    s.pop();
 
-
+    // s.push(10);
+    // s.push(30);
+    // s.push(20);
     
     return 0;
 }

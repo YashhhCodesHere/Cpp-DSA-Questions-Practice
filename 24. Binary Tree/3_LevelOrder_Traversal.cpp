@@ -65,10 +65,9 @@ void levelOrderTraversalWithNull(TreeNode* root){
 
         if(curr == nullptr){
             cout << "\n";
-            if(q.empty()){
-                return;
+            if(!q.empty()){
+                q.push(nullptr);
             }
-            q.push(nullptr);
         }else{
             cout << curr -> data << " ";
 

@@ -13,13 +13,13 @@ public:
     }
 };
 
-int countNodes(TreeNode* root){
+int countTotalNodes(TreeNode* root){
     if(!root){
         return 0;
     }
 
-    int leftSubTree = countNodes(root -> left);
-    int rightSubTree = countNodes(root -> right);
+    int leftSubTree = countTotalNodes(root -> left);
+    int rightSubTree = countTotalNodes(root -> right);
 
     return leftSubTree + rightSubTree + 1;
 }

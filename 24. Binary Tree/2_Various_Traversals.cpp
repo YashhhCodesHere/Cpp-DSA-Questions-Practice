@@ -24,6 +24,7 @@ TreeNode* buildTree(vector<int>& nodes, int& idx) {
     TreeNode* root = new TreeNode(nodes[idx++]);
     root->left = buildTree(nodes, idx);
     root->right = buildTree(nodes, idx);
+    
     return root;
 }
 

@@ -26,6 +26,7 @@ TreeNode* buildTree(vector<int> nodes, int& idx){
     return currNode;
 }
 
+// Printing Data in single line
 void levelOrderTraversal(TreeNode* root){
     if(!root){
         return;
@@ -49,7 +50,7 @@ void levelOrderTraversal(TreeNode* root){
     }
 }
 
-
+// Printing data according to the levels
 void levelOrderTraversalWithNull(TreeNode* root){
     if(!root){
         return;

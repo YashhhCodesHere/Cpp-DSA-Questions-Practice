@@ -34,7 +34,7 @@ bool rootToNodePath(TreeNode* root, int n, vector<int>& path){   //VVI
 }
 
 
-int LCA(TreeNode* root, int n1, int n2){
+int LCA(TreeNode* root, int n1, int n2){    // TC: O(n) ; SC: O(n)
     vector<int> path1, path2;
 
     if(!rootToNodePath(root, n1, path1) || !rootToNodePath(root, n2, path2)){
@@ -50,6 +50,15 @@ int LCA(TreeNode* root, int n1, int n2){
         lca = path1[i];    // We can also put path2[j] here.
     }
     return lca;
+}
+
+TreeNode* LCA(TreeNode* root, TreeNode* n1, TreeNode* n2){
+
+
+    if(root == n1 || root == n2){
+        return root;
+    }
+    
 }
 
 int main(){

@@ -30,7 +30,7 @@ void helperPath(TreeNode* root, vector<int>& result){
 
     if(!root->left && !root->right){
         printPath(result);
-        result.pop_back();
+        result.pop_back();  // BackTrack
         return;
     }
 

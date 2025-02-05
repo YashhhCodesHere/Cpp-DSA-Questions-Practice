@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//   Class made memory allocation in Heaps, while Structs made their memory allocation in Stacks!
+
 // ENCAPSULATION: Binding DATA & FUNCTIONS together in a single unit called CLASS.
 // ABSRACTION: Hiding the unnecessary details from the user and only showing the necessary details to the user.
 

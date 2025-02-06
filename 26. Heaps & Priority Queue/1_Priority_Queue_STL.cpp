@@ -20,6 +20,8 @@
     So, We conclude that, the following are made up of:- (-> : Made up of)
     Priority Queue (STL) -> Heap (Visualized as CBT) -> Array/Vector (Implementation/Code)
 
+    Special Function called 'Heapify' is used to maintain the heap properties -> Mostly for pop and heap sort!
+
 
 
 ->  Heaps are basically a Complete Binary Tree.[Visualize it as a CBT]

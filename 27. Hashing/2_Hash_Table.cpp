@@ -1,6 +1,114 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class Node{
+public:
+    string key;
+    int val;
+    Node* next;
+
+    Node(string key, int val){
+        this->key = key;
+        this->val = val;
+        next = nullptr;
+    }
+
+    ~Node(){
+        if(next){
+            delete next;
+        }
+    }
+};
+
+class HashTable{
+    int totalSize;
+    int currSize;
+    Node** table;
+
+    int hashFunction(string key){   // Our own Custom-Made Hash Function!
+        int idx;
+        for(int i=0; i<key.size(); i++){
+            idx += (key[i] * key[i])%totalSize;
+        }
+        return idx;
+    }
+
+    void rehash(){
+        Node** oldTable = table;
+        int oldSize = totalSize;
+
+        totalSize *= 2;
+        table = new Node*[totalSize];
+
+        for(int i=0; i<totalSize; i++){
+            table[i] = nullptr;
+        }
+
+        for(int i=0; i<oldSize; i++){
+            Node* head = oldTable[i];
+            while(head){
+                insert(head->key, head->val);
+                head = head->next;
+            }
+
+            if(oldTable[i]){
+                delete oldTable[i];
+            }
+        }
+
+        delete[] oldTable;
+    }
+
+public:
+    // Constructor Call
+    HashTable(int totalSize = 10){
+        this->totalSize = totalSize;
+        currSize = 0;
+
+        table = new Node*[totalSize];
+
+        for(int i=0; i<totalSize; i++){
+            table[i] = nullptr;
+        }
+    }
+
+    void insert(string key, int val){   // Avg Case: O(1), Worst Case: O(n)->At the time of Rehashing
+        int idx = hashFunction(key);
+
+        Node* newNode = new Node(key, val);
+        Node* head = table[idx];
+
+        newNode->next = head;
+        head = newNode;
+
+        currSize++;
+
+        // Rehashing:-
+        double lambda = currSize/(double)totalSize;
+        if(lambda > 0.7){
+            rehash();
+        }
+
+    }
+
+    bool exists(string key){
+
+    }
+
+    int search(string key){
+
+    }
+
+    void erase(string key){
+
+    }
+};
+
+int main(){
+    
+    return 0;
+}
+
 /*
     Hash Tables are used to store key-value pairs, implemented with the help of arrays.
     It is used for unordered data, and retrieval of data with the help of key in O(1) time.
@@ -30,9 +138,13 @@ using namespace std;
     2. Open Addressing: We store elements at next available index, if collision occurs.
     3. Double Hashing: We use two hash functions, to find next available index.
 
-*/
-
-int main(){
+    When currSize of Hash table exceeds a certain threshold, we get too many nodes at same index, 
+    and we need to rehash the table. (REHASHING)
+    Here:-
+    Searching for an index = O(1), but traversing the linked list = O(λ), where λ is avg size of linked list;
+    λ = x/n = load factor, where x is total elements(currSize), and n is total size of Hash Table.
     
-    return 0;
-}
+    While Rehashing:- (Process of increasing the size of Hash Table)
+    We set a threshold (λ), and when it exceeds, we double the size of Hash Table, and rehash all elements.
+    For generally, λ > 0.7, we rehash the table.
+*/

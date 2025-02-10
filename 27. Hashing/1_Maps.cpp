@@ -3,6 +3,14 @@
 #include <string>
 
 /*
+    Maps uses a Self-Balancing BST (Red-Black Tree) to store the elements.
+    Basic Operations:-
+    1. Insertion: O(log n)
+    2. Deletion: O(log n)
+    3. Searching: O(log n) 
+
+    -> Maps are always Sorted Ordered, hence they are slower than unordered_map.
+
     Maps are the STL containers that store elements in key-value pairs.
     The elements are stored in a sorted order based on the key, where the key is unique.
     The key is used to access the elements in the map, like an index in an array.

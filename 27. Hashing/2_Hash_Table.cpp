@@ -25,19 +25,20 @@ class HashTable{
     int currSize;
     Node** table;
 
-    int hashFunction(string key){   // Our own Custom-Made Hash Function!
-        int idx;
-        for(int i=0; i<key.size(); i++){
-            idx += (key[i] * key[i])%totalSize;
+    int hashFunction(string key) {   
+        int idx = 0;
+        for (int i = 0; i < key.size(); i++) {
+            idx = (idx + (key[i] * key[i]) % totalSize) % totalSize;
         }
         return idx;
-    }
+    }    
 
     void rehash(){
         Node** oldTable = table;
         int oldSize = totalSize;
 
         totalSize *= 2;
+        currSize = 0;
         table = new Node*[totalSize];
 
         for(int i=0; i<totalSize; i++){
@@ -76,10 +77,9 @@ public:
         int idx = hashFunction(key);
 
         Node* newNode = new Node(key, val);
-        Node* head = table[idx];
-
-        newNode->next = head;
-        head = newNode;
+        
+        newNode->next = table[idx];
+        table[idx] = newNode;
 
         currSize++;
 
@@ -92,20 +92,78 @@ public:
     }
 
     bool exists(string key){
+        int idx = hashFunction(key);
 
+        Node* temp = table[idx];
+        while(temp){
+            if(temp->key == key){
+                return true;
+            }
+            temp = temp->next;
+        }
+        return false;
     }
 
-    int search(string key){
-
-    }
+    int search(string key) {
+        int idx = hashFunction(key);
+    
+        Node* temp = table[idx];
+        while(temp) {  
+            if(temp->key == key) {
+                return temp->val;
+            }
+            temp = temp->next;
+        }
+        return -1;
+    }    
 
     void erase(string key){
+        int idx = hashFunction(key);
+        Node* temp = table[idx];
+        Node* prev = nullptr;
 
+        while(temp){
+            if(temp->key == key){
+                if(prev == nullptr){    // For deleting the head node
+                    table[idx] = temp->next;
+                }else{    // For Rest of the node
+                    prev->next = temp->next;
+                }
+                // Deletion:-
+                temp->next = nullptr;
+                delete temp;
+                currSize--;
+                return;
+            }
+        }
+
+        prev = temp;
+        temp = temp->next;
+    }
+
+    void print(){
+        for(int i = 0; i < totalSize; i++){
+            cout << "Index " << i << " -> ";
+            Node* temp = table[i];
+            while(temp){
+                cout << "(" << temp->key << ", " << temp->val << ") -> ";
+                temp = temp->next;
+            }
+            cout << "NULL\n";
+        }
     }
 };
 
 int main(){
-    
+    HashTable ht;
+    ht.insert("India", 1000);
+    ht.insert("Russia", 900);
+    ht.insert("Us", 200);
+
+    cout << ht.search("Russia") << "\n";
+
+    ht.print();
+
     return 0;
 }
 

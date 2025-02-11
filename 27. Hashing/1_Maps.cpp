@@ -14,6 +14,9 @@
     Maps are the STL containers that store elements in key-value pairs.
     The elements are stored in a sorted order based on the key, where the key is unique.
     The key is used to access the elements in the map, like an index in an array.
+
+    Basic Syntax:-
+                    map<key_type, value_type> mp;
 */
 using namespace std;
 

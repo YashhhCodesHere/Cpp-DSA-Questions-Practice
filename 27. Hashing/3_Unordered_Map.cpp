@@ -14,6 +14,8 @@ using namespace std;
 
     => Whenever it's given in question that the order of elements doesn't matter, always prefer unordered_map.
 
+    => when you access a key in an unordered_map that doesn't exist, 
+       it automatically initializes it with a default value (which is 0 for int).
 */
 
 int main(){

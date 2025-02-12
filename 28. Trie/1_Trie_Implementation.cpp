@@ -28,6 +28,18 @@ public:
         }
         temp->isEndOfWord = true;
     }
+
+    bool search(string key){
+        TrieNode* temp = root;
+        
+        for(auto ch : key){
+            if(temp->children.find(ch) == temp->children.end()){
+                return false;
+            }
+            temp = temp->children[ch];
+        }
+        return (temp->isEndOfWord);
+    }
 };
 
 int main(){

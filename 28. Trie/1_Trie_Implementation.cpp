@@ -18,7 +18,7 @@ public:
         root = new TrieNode();
     }
 
-    void insert(string word) {
+    void insert(string word) {  // O(N*L)
         TrieNode* temp = root;
         for(char ch : word){
             if(temp->children.count(ch) == 0){
@@ -29,7 +29,7 @@ public:
         temp->isEndOfWord = true;
     }
 
-    bool search(string key){
+    bool search(string key){    // O(L)
         TrieNode* temp = root;
         
         for(auto ch : key){
@@ -43,7 +43,15 @@ public:
 };
 
 int main(){
-    
+    vector<string> words = {"the", "their", "there", "thee", "those"};
+    Trie t;
+
+    for(auto i : words){
+        t.insert(i);
+    }
+
+    cout << t.search("there") << "\n";
+
     return 0;
 }
 

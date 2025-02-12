@@ -21,7 +21,8 @@ int main(){
     cout << "Size of the set: " << us.size() << "\n"; // Returns 3, as 10 is inserted 3 times but it stores only unique keys.
 
     us.erase(20);  // Removes 20 from the set.
-
+    
+    // Searching 20 in the set:-
     if(us.find(20) != us.end()){    // Returns an iterator to the element if found, else returns us.end().
         cout << "20 is present in the set.\n";
     }else{

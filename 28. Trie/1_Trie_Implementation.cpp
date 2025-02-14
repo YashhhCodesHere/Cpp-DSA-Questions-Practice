@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Trie doesn't have any builtin STL in C++
+
 class TrieNode {
 public:
     unordered_map<char, TrieNode*> children;
@@ -39,6 +41,19 @@ public:
             temp = temp->children[ch];
         }
         return (temp->isEndOfWord);
+    }
+
+    bool startsWith(string prefix) {
+        TrieNode* temp = root;
+
+        for(auto ch : prefix){
+            if(temp->children.count(ch) == 0){
+                return false;
+            }
+            temp = temp->children[ch];
+        }
+
+        return true;    // Prefix exists, return true even if it's not an end of a word
     }
 };
 

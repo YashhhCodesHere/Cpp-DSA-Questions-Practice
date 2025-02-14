@@ -45,6 +45,20 @@ public:
         }
         return (temp->isEndOfWord);
     }
+
+    string getPrefix(string key){
+        TrieNode* temp = root;
+        string prefix = "";
+        
+        for(int i = 0; i < key.size(); i++){
+            prefix += key[i];
+            if(temp->children[key[i]]->freq == 1){
+                break;
+            }
+            temp = temp->children[key[i]];
+        }
+        return prefix;
+    }
 };
 
 class Solution {
@@ -64,20 +78,6 @@ public:
         }
 
         return false;
-    }
-
-    string getPrefix(string key){
-        TrieNode* temp = root;
-        string prefix = "";
-        
-        for(int i = 0; i < key.size(); i++){
-            prefix += key[i];
-            if(temp->children[key[i]]->freq == 1){
-                break;
-            }
-            temp = temp->children[key[i]];
-        }
-        return prefix;
     }
 
     bool wordBreak(string s, vector<string>& wordDict) {

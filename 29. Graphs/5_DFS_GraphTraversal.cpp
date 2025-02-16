@@ -50,6 +50,7 @@ public:
         cout << "\n";
     }
 
+    // Prefer this function for disconnected graphs to print all the vertices
     void dfsForDisconnected(){
         vector<bool> visited(V, false);    // Initialised with size V and all values as false
         for(int i = 0; i < V; i++){

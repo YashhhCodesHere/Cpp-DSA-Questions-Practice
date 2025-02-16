@@ -7,7 +7,7 @@ using namespace std;
     which is used for various practical applications like Social Networks, Maps, etc.
     Graph is represented as G(V, E), where V is the set of vertices and E is the set of edges.
 
-    Graphs may consists of multiple components which are connected to each other through edges. 
+    Graphs may consists of multiple components which are connected to each other through edges.
     DisConnected components are called 'Islands' in Graphs. -> DISJOINT GRAPH
 
     Graphs can be implemented using 2 ways:-
@@ -18,12 +18,188 @@ using namespace std;
         - Front(), Back(), size(), empty()
         - Can also be implemented with array, vectors, unordered_map, etc., with linkedlist
 
-    
+    2. Adjacency Matrix:-
+        -> Using 2D Array: 2D Array of size VxV, where V is the number of vertices.
+        - Mark '1' if a node is connected to another node, else '0'.
+        - Can use weights instead too (if weighted graph).
+        - Space Complexity: O(V^2) -> Consumes more space.
+        - Time Complexity: O(1) -> Faster access to edges.
+        - Used when the graph is dense. (Most of the nodes are connected or, edges are present)
+
+    3. Edge List:-
+        -> List of edges which are connected to each other.
+        - Used when Edges Operations / Queries are to be performed.
+        - Used when the graph is sparse. (Few edges are present)
+        - Space Complexity: O(E) -> Consumes less space.
+        - Time Complexity: O(E) -> Slower access to edges.
+        - Used when the graph is sparse. (Few edges are present)
+
+    4. Implicit Graph:-
+        -> Graphs which are not explicitly defined, mostly 2D arrays are treated as implicit graphs.
+        - Used in Grid Based Problems, Floodfill, etc.
+        - For X(i,j):-
+            Neighbour 1 (Up): X(i-1, j)
+            Neighbour 2 (Down): X(i+1, j)
+            Neighbour 3 (Left): X(i, j-1)
+            Neighbour 4 (Right): X(i, j+1)
 
 */
 
-int main(){
-    
+class Graph
+{
+private:
+    unordered_map<int, vector<int>> adjList; // Adjacency list representation
+    int V;                                   // Number of vertices
+
+    // Helper function for DFS
+    void DFSUtil(int v, unordered_map<int, bool> &visited)
+    {
+        cout << v << " ";
+        visited[v] = true;
+
+        for (int neighbor : adjList[v])
+        {
+            if (!visited[neighbor])
+            {
+                DFSUtil(neighbor, visited);
+            }
+        }
+    }
+
+    // Helper function for cycle detection (DFS-based)
+    bool isCyclicUtil(int v, unordered_map<int, bool> &visited, int parent)
+    {
+        visited[v] = true;
+
+        for (int neighbor : adjList[v])
+        {
+            if (!visited[neighbor])
+            {
+                if (isCyclicUtil(neighbor, visited, v))
+                    return true;
+            }
+            else if (neighbor != parent)
+            {
+                return true; // Found a back edge (cycle)
+            }
+        }
+        return false;
+    }
+
+public:
+    // Constructor
+    Graph(int vertices) : V(vertices) {}
+
+    // Add an edge to the graph
+    void addEdge(int u, int v, bool isDirected = false)
+    {
+        adjList[u].push_back(v);
+        if (!isDirected)
+        {
+            adjList[v].push_back(u);
+        }
+    }
+
+    // Remove an edge from the graph
+    void removeEdge(int u, int v)
+    {
+        auto &vecU = adjList[u];
+        vecU.erase(remove(vecU.begin(), vecU.end(), v), vecU.end());
+
+        auto &vecV = adjList[v];
+        vecV.erase(remove(vecV.begin(), vecV.end(), u), vecV.end());
+    }
+
+    // Display the adjacency list
+    void display()
+    {
+        for (auto &pair : adjList)
+        {
+            cout << pair.first << " -> ";
+            for (int neighbor : pair.second)
+            {
+                cout << neighbor << " ";
+            }
+            cout << endl;
+        }
+    }
+
+    // Breadth-First Search (BFS)
+    void BFS(int start)
+    {
+        unordered_map<int, bool> visited;
+        queue<int> q;
+        visited[start] = true;
+        q.push(start);
+
+        while (!q.empty())
+        {
+            int node = q.front();
+            q.pop();
+            cout << node << " ";
+
+            for (int neighbor : adjList[node])
+            {
+                if (!visited[neighbor])
+                {
+                    visited[neighbor] = true;
+                    q.push(neighbor);
+                }
+            }
+        }
+        cout << endl;
+    }
+
+    // Depth-First Search (DFS)
+    void DFS(int start)
+    {
+        unordered_map<int, bool> visited;
+        DFSUtil(start, visited);
+        cout << endl;
+    }
+
+    // Cycle detection in an undirected graph
+    bool isCyclic()
+    {
+        unordered_map<int, bool> visited;
+        for (auto &pair : adjList)
+        {
+            if (!visited[pair.first])
+            {
+                if (isCyclicUtil(pair.first, visited, -1))
+                    return true;
+            }
+        }
+        return false;
+    }
+};
+
+int main()
+{
+    Graph g(5); // Creating a graph with 5 vertices
+
+    g.addEdge(0, 1);
+    g.addEdge(0, 4);
+    g.addEdge(1, 2);
+    g.addEdge(1, 3);
+    g.addEdge(1, 4);
+    g.addEdge(3, 4);
+
+    cout << "Graph adjacency list:" << endl;
+    g.display();
+
+    cout << "\nBFS starting from node 0: ";
+    g.BFS(0);
+
+    cout << "\nDFS starting from node 0: ";
+    g.DFS(0);
+
+    cout << "\nCycle detection: ";
+    if (g.isCyclic())
+        cout << "Graph contains a cycle" << endl;
+    else
+        cout << "No cycle in the graph" << endl;
+
     return 0;
 }
 

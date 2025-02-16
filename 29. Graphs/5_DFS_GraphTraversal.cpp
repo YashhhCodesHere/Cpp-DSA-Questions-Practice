@@ -33,10 +33,11 @@ public:
     }
 
     void dfsHelper(int u, vector<bool>& visited){     // Time Complexity: O(V+E) -> V: Number of Vertices, E: Number of Edges
+        cout << u << " ";
         visited[u] = true;
         cout << u << " ";
 
-        for(auto v : l[u]){
+        for(int v : l[u]){
             if(!visited[v]){
                 dfsHelper(v, visited);
             }
@@ -46,6 +47,16 @@ public:
     void dfs(int src = 0){
         vector<bool> visited(V, false);    // Initialised with size V and all values as false
         dfsHelper(src, visited);
+        cout << "\n";
+    }
+
+    void dfsForDisconnected(){
+        vector<bool> visited(V, false);    // Initialised with size V and all values as false
+        for(int i = 0; i < V; i++){
+            if(!visited[i]){
+                dfsHelper(i, visited);
+            }
+        }
         cout << "\n";
     }
 };

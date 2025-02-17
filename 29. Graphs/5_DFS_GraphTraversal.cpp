@@ -35,7 +35,6 @@ public:
     void dfsHelper(int u, vector<bool>& visited){     // Time Complexity: O(V+E) -> V: Number of Vertices, E: Number of Edges
         cout << u << " ";
         visited[u] = true;
-        cout << u << " ";
 
         for(int v : l[u]){
             if(!visited[v]){
@@ -77,7 +76,7 @@ int main(){
 
     // DFS Traversal:-
     cout << "DFS Traversal: ";
-    graph.dfs();
+    graph.dfs(2);
 
     return 0;
 }

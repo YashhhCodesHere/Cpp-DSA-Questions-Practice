@@ -45,41 +45,31 @@ using namespace std;
 
 */
 
-class Graph
-{
-private:
+class Graph{
     unordered_map<int, vector<int>> adjList; // Adjacency list representation
     int V;                                   // Number of vertices
 
     // Helper function for DFS
-    void DFSUtil(int v, unordered_map<int, bool> &visited)
-    {
+    void DFSUtil(int v, unordered_map<int, bool> &visited){
         cout << v << " ";
         visited[v] = true;
 
-        for (int neighbor : adjList[v])
-        {
-            if (!visited[neighbor])
-            {
+        for (int neighbor : adjList[v]){
+            if (!visited[neighbor]){
                 DFSUtil(neighbor, visited);
             }
         }
     }
 
     // Helper function for cycle detection (DFS-based)
-    bool isCyclicUtil(int v, unordered_map<int, bool> &visited, int parent)
-    {
+    bool isCyclicUtil(int v, unordered_map<int, bool> &visited, int parent){
         visited[v] = true;
 
-        for (int neighbor : adjList[v])
-        {
-            if (!visited[neighbor])
-            {
+        for (int neighbor : adjList[v]){
+            if (!visited[neighbor]){
                 if (isCyclicUtil(neighbor, visited, v))
                     return true;
-            }
-            else if (neighbor != parent)
-            {
+            }else if (neighbor != parent){
                 return true; // Found a back edge (cycle)
             }
         }
@@ -91,18 +81,15 @@ public:
     Graph(int vertices) : V(vertices) {}
 
     // Add an edge to the graph
-    void addEdge(int u, int v, bool isDirected = false)
-    {
+    void addEdge(int u, int v, bool isDirected = false){
         adjList[u].push_back(v);
-        if (!isDirected)
-        {
+        if (!isDirected){
             adjList[v].push_back(u);
         }
     }
 
     // Remove an edge from the graph
-    void removeEdge(int u, int v)
-    {
+    void removeEdge(int u, int v){
         auto &vecU = adjList[u];
         vecU.erase(remove(vecU.begin(), vecU.end(), v), vecU.end());
 
@@ -111,13 +98,10 @@ public:
     }
 
     // Display the adjacency list
-    void display()
-    {
-        for (auto &pair : adjList)
-        {
+    void display(){
+        for (auto &pair : adjList){
             cout << pair.first << " -> ";
-            for (int neighbor : pair.second)
-            {
+            for (int neighbor : pair.second){
                 cout << neighbor << " ";
             }
             cout << endl;
@@ -125,23 +109,19 @@ public:
     }
 
     // Breadth-First Search (BFS)
-    void BFS(int start)
-    {
+    void BFS(int start){
         unordered_map<int, bool> visited;
         queue<int> q;
         visited[start] = true;
         q.push(start);
 
-        while (!q.empty())
-        {
+        while (!q.empty()){
             int node = q.front();
             q.pop();
             cout << node << " ";
 
-            for (int neighbor : adjList[node])
-            {
-                if (!visited[neighbor])
-                {
+            for (int neighbor : adjList[node]){
+                if (!visited[neighbor]){
                     visited[neighbor] = true;
                     q.push(neighbor);
                 }
@@ -151,21 +131,17 @@ public:
     }
 
     // Depth-First Search (DFS)
-    void DFS(int start)
-    {
+    void DFS(int start){
         unordered_map<int, bool> visited;
         DFSUtil(start, visited);
         cout << endl;
     }
 
     // Cycle detection in an undirected graph
-    bool isCyclic()
-    {
+    bool isCyclic(){
         unordered_map<int, bool> visited;
-        for (auto &pair : adjList)
-        {
-            if (!visited[pair.first])
-            {
+        for (auto &pair : adjList){
+            if (!visited[pair.first]){
                 if (isCyclicUtil(pair.first, visited, -1))
                     return true;
             }
@@ -174,8 +150,7 @@ public:
     }
 };
 
-int main()
-{
+int main(){
     Graph g(5); // Creating a graph with 5 vertices
 
     g.addEdge(0, 1);

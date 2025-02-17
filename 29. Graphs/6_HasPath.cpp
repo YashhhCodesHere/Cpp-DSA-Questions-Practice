@@ -37,9 +37,9 @@ public:
             return true;
         }
         visited[src] = true;
-        for (auto nbr : l[src]) {
-            if (!visited[nbr]) {
-                if (hasPathHelper(nbr, dest, visited)) {
+        for (auto v : l[src]) {
+            if (!visited[v]) {
+                if (hasPathHelper(v, dest, visited)) {
                     return true;  
                 }
             }

@@ -12,7 +12,6 @@ using namespace std;
         - CYCLIC & EVEN CYCLE -> Then, it's Bipartite.
         - CYCLIC & ODD CYCLE -> Then, it's NOT Bipartite.
     
-    
 */
 
 class Graph{

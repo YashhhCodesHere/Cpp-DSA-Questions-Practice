@@ -2,8 +2,14 @@
 using namespace std;
 
 /*
-    BackEdge: In terms of Graphs, an edge that connects a vertex to one of its ancestors in the DFS Tree.
-    If there's a back edge in the graph, then the graph contains a cycle.
+    Cycle Detection can be performed by both BFS as well as DFS.
+    But, DFS is more efficient in this case.
+    
+    Back Edge: In terms of Graphs, an edge that connects a vertex to one of its ancestors in the DFS Tree.
+    If there's a back edge in the (UNDIRECTED GRAPH), then the graph contains a cycle.
+
+    Condition for Cycle:-
+        [ (Neighbor is Visited) && (Neighbor is not Parent) ] -> Back Edge (Cycle Detected)
 */
 
 class Graph{
@@ -18,7 +24,7 @@ class Graph{
                 if(isCyclicUtil(v, visited, src)){
                     return true;
                 }
-            }else if(v != parent){
+            }else if(v != parent){    // Got a Back Edge (Cycle)
                 return true;
             }
         }

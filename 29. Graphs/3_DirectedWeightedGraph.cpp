@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    There's block edge may occurs in the directed graphs, hence we use loop to travel to each of the neighbors.
+    
+*/
+
 class Graph {
     int V; // Total number of vertices
     vector<list<pair<int, int>>> l; // Adjacency List using vector

@@ -1,6 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    We check that the graph is bipartite or NOT using BFS via Graph Coloring Approach.
+    We assign colors to the vertices of the graph such that no two directly connected vertices have the same color.
+    If we get a vertex that has the same color as its neighbor, then the graph is NOT Bipartite.
+
+    Although, we can directly check for the graph is Bipartite or NOT using the following approach:-
+    If Graph is:-
+        - ACYCLIC -> Then, it's Bipartite.
+        - CYCLIC & EVEN CYCLE -> Then, it's Bipartite.
+        - CYCLIC & ODD CYCLE -> Then, it's NOT Bipartite.
+    
+    
+*/
+
 class Graph{
     int V;
     vector<list<int>> l;
@@ -26,8 +40,55 @@ public:
         }
     }
 
-    bool isBipartite(){     // We're using BFS here for checking the graph is bipartite or NOT!
+    bool isBipartite(int src = 0){     // We're using BFS here for checking the graph is bipartite or NOT!
+        queue<int> q;
+        vector<bool> visited(V, false);
+        vector<int> color(V, -1);
 
+        q.push(src);
+        color[src] = 0;
+        visited[0] = true;
+
+        while(!q.empty()){
+            int curr = q.front();
+            q.pop();
+
+            for(auto neighbor : l[curr]){
+                if(!visited[neighbor]){
+                    visited[neighbor] = true;
+                    color[neighbor] = !color[curr];
+                }else if(color[neighbor] == color[curr]){
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    // More Optimised Approach in terms of Space Complexity!
+    bool isBipartiteWithoutVisited(int src = 0){     // We're using BFS here for checking the graph is bipartite or NOT!
+        queue<int> q;
+        vector<int> color(V, -1);
+
+        q.push(src);
+        color[src] = 0;
+
+        while(!q.empty()){
+            int curr = q.front();
+            q.pop();
+
+            for(auto v : l[curr]){
+                if(color[v] == -1){     // Node Unvisited
+                    color[v] = !color[curr];
+                    q.push(v);
+                }else if(color[v] == color[curr]){
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 };
 

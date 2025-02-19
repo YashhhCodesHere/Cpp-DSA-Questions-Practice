@@ -4,6 +4,11 @@ using namespace std;
 
 /*
     str.length() -> Is a member function of string class that returns the length of the string.
+    str += to_string(5); -> 'to_string' function convert int (5) to string and append it to the string.
+
+    FOR BACKTRACKING USING STRING:-
+        path = path.substr(0, path.size() - 1); -> 'substr' function is used to get the substring of the string.
+
     ' . ' -> Dot Operator is used to access the member functions of the class.
     
     Generally String takes 28 bytes, but it can vary depending on the compiler.

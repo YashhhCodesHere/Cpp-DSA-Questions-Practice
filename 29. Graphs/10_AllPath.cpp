@@ -50,7 +50,7 @@ public:
         return false;
     }
 
-    void allPathHelper(int src, int dest, vector<bool>& visited, vector<bool>& path){   // O(V+E)
+    void allPathHelper(int src, int dest, vector<bool>& visited, vector<int>& path){   // O(V+E)
         if(src == dest){
             return;
         }

@@ -10,7 +10,7 @@ using namespace std;
     In DP, we use an extra Data Structure(Array, Map, etc)to store the results of the subproblems so that we don't have to solve them again.
 
     There are two ways to solve a problem using DP:
-    1. Top Down Approach (Memoization)  : 
+    1. Top Down Approach (Memoization)  : Recursion + Additional Data Structure
     2. Bottom Up Approach (Tabulation)
 
     DP is performed on a problem, iff the problem satisfies the following properties:-

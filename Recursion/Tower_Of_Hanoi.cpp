@@ -12,8 +12,7 @@ void towerOfHanoi(int n, string source, string helper, string destination){
     towerOfHanoi(n-1, helper, source, destination);
 }
 
-int main()
-{
+int main(){
     int disks;
     cout<<"Enter the number of disks: ";
     cin>>disks;

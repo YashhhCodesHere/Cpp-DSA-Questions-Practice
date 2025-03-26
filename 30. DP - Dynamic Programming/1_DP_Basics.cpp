@@ -16,9 +16,23 @@ using namespace std;
     DP is performed on a problem, iff the problem satisfies the following properties:-
     1. Optimal Substructure
     2. Overlapping Subproblems (Multiple Branches in Recursion Tree)
+
+    -> DP is all about patterns and memorization. So, Practice as much as you can!
 */
 
 int main(){
-    
+    /*
+        Differences between DP approaches:-
+        Memoization:                                        Tabulation:
+        1. Recursive approach.                              1. Iterative approach.
+        2. Top Down approach.                               2. Bottom Up approach.
+        3. Largest to smallest problem.                     3. Smallest to largest problem.
+        4. More intuitive(Easier to think).                 4. Comparatively more optimised.
+
+        -> Both approaches uses extra space to store the results of subproblems, But Memoization uses extra stack for recursion.
+           Hence, Tabulation is more space efficient than Memoization, and WE PREFER THAT.
+    */
+
+
     return 0;
 }
